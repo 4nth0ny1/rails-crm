@@ -11,22 +11,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <form>
+
+  <div class="field mb-3">
+    <label class="form-label"><%= form.label :email %></label>
+    <div class="form-conrol"><%= form.text_field :email %></div>
+  </div>
+
+  <div class="field  mb-3">
+    <label class="form-label"><%= form.label :password %></label>
+    <div class="form-conrol"><%= form.password_field :password %></div>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
+    <label class="form-label"><%= form.label :password_confirmation %></label>
+    <div class="form-conrol"><%= form.password_field :password_confirmation %></div>
+  </div><br>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+</form>
