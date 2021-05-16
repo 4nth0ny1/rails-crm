@@ -46,6 +46,13 @@ Opportunity and Contact Table (opportunity_contacts is the name of the table)
 	contact_id 
 	Log a Connection (drop-down of calls, emails, research, plus notes section)
 
+Opportunity and Product join table 
+	belongs_to :opportunity
+	belongs_to :product
+
+	opportunity_id
+	product_id
+
 Contact
 	belongs_to account
 	has_many opportunity_contacts

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_173249) do
+ActiveRecord::Schema.define(version: 2021_05_16_191822) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "company_name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2021_05_16_173249) do
   create_table "accounts_contacts", id: false, force: :cascade do |t|
     t.integer "account_id", null: false
     t.integer "contact_id", null: false
+    t.index ["account_id", "contact_id"], name: "index_accounts_contacts_on_account_id_and_contact_id"
+    t.index ["contact_id", "account_id"], name: "index_accounts_contacts_on_contact_id_and_account_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -42,6 +44,8 @@ ActiveRecord::Schema.define(version: 2021_05_16_173249) do
   create_table "contacts_opportunities", id: false, force: :cascade do |t|
     t.integer "opportunity_id", null: false
     t.integer "contact_id", null: false
+    t.index ["contact_id", "opportunity_id"], name: "index_contacts_opportunities_on_contact_id_and_opportunity_id"
+    t.index ["opportunity_id", "contact_id"], name: "index_contacts_opportunities_on_opportunity_id_and_contact_id"
   end
 
   create_table "opportunities", force: :cascade do |t|
@@ -53,6 +57,13 @@ ActiveRecord::Schema.define(version: 2021_05_16_173249) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_opportunities_on_account_id"
     t.index ["contact_id"], name: "index_opportunities_on_contact_id"
+  end
+
+  create_table "opportunities_products", id: false, force: :cascade do |t|
+    t.integer "opportunity_id", null: false
+    t.integer "product_id", null: false
+    t.index ["opportunity_id", "product_id"], name: "index_opportunities_products_on_opportunity_id_and_product_id"
+    t.index ["product_id", "opportunity_id"], name: "index_opportunities_products_on_product_id_and_opportunity_id"
   end
 
   create_table "users", force: :cascade do |t|
