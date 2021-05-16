@@ -26,7 +26,7 @@ Opportunity - When a sales rep makes a connection and has a conversation about a
 	has_many opportunity_contacts
 
 	Products of interest
-	Contacts involved 
+	Contact_id 
 	Account_ID
 	**time in state
 	**value of opportunities
