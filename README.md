@@ -8,22 +8,22 @@ User class
 	email
 	create an account 
 
-Accounts class - from here the user can CRUD contacts, opportunities, company information, and log connections
-		has_many contacts
-		has_many opportunities 
+Account class - from here the user can CRUD contacts, opportunities, company information, and log connections
+		has_many contacts, through account_contacts
+		has_many opportunities
 		belongs_to user
 
 	Company name
 	Address
-	Phone, Contacts
-	Opportunities_Id
+	Phone 
 	User_id
 	Log a Connection (drop-down of calls, emails, research, plus notes section)
 	**Products bought List
 	**Time in state
 
-Opportunities - When a sales rep makes a connection and has a conversation about a certain product.
-		belongs_to account
+Opportunity - When a sales rep makes a connection and has a conversation about a certain product.
+	belongs_to account
+	has_many opportunity_contacts
 
 	Products of interest
 	Contacts involved 
@@ -31,8 +31,24 @@ Opportunities - When a sales rep makes a connection and has a conversation about
 	**time in state
 	**value of opportunities
 
-Contacts 
-		belongs_to account
+Account and Contact Join Table needed (account_contacts is the name of the table)
+	belongs_to account
+	belongs_to contact
+
+	contact_id
+	account_id
+ 
+Opportunity and Contact Table (opportunity_contacts is the name of the table)
+	belongs_to opportunity
+	belongs_to contact
+
+	opportunity_id
+	contact_id 
+	Log a Connection (drop-down of calls, emails, research, plus notes section)
+
+Contact
+	belongs_to account
+	has_many opportunity_contacts
 		
 	First Name 
 	Last Name 

@@ -1,5 +1,7 @@
 <h1>Create Your User Account</h1>
 
+<%= link_to "Sign in with Google", "/auth/google_oauth2", method: :post %>
+
 <%= render 'form', user: @user %>
 
 <%= link_to 'Back', users_path %>
