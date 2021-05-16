@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   
   resources :users
+  resources :accounts
+  resources :contacts
+  resources :opportunities
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signup', to: 'users#new', as: 'signup'

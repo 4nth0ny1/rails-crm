@@ -25,8 +25,8 @@ Opportunity - When a sales rep makes a connection and has a conversation about a
 	belongs_to account
 	has_many opportunity_contacts
 
-	Products of interest
-	Contact_id 
+	Products
+	Contacts    
 	Account_ID
 	**time in state
 	**value of opportunities
@@ -56,6 +56,13 @@ Contact
 	email 
 	Role
 	Account_id
+
+Product
+
+	title
+	description
+	product_number
+	price
 
 ** Dashboard - the dash board will act as a hub for organizing the day. 
 

@@ -4,7 +4,7 @@ class CreateAccounts < ActiveRecord::Migration[6.1]
       t.string :company_name
       t.string :address
       t.string :phone
-      t.references :user
+      t.references :user,  null: false, foreign_key: true
 
       t.timestamps
     end
