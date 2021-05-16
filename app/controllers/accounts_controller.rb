@@ -18,8 +18,8 @@ class AccountsController < ApplicationController
     end
 
     def create
-      if current_user
-          @account = Account.new(account_params)
+  
+          @account = current_user.accounts.new(account_params)
       
           respond_to do |format|
             if @account.save
@@ -30,7 +30,7 @@ class AccountsController < ApplicationController
               format.json { render json: @account.errors, status: :unprocessable_entity }
             end
           end
-        end
+        
       end
 
       def update
@@ -57,7 +57,9 @@ class AccountsController < ApplicationController
       private
       # Use callbacks to share common setup or constraints between actions.
       def set_account
-        @account = Account.find(params[:id])
+        if current_user
+          @account = Account.find(params[:id])
+        end
       end
   
       # Only allow a list of trusted parameters through.
