@@ -1,9 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 
+<h2>
+  <strong><%= @account.company_name %></strong>
+</h2>
+
 <p>
-  <strong>Company Name:</strong>
-  <%= @account.company_name %>
+  <strong>Address:</strong>
+  <%= @account.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @account.phone %>
 </p>
 
 <%= link_to 'Edit', edit_account_path(@account) %> |

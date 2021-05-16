@@ -19,7 +19,7 @@ class AccountsController < ApplicationController
 
     def create
   
-          @account = current_user.accounts.new(account_params)
+          @account = current_user.accounts.build(account_params)
       
           respond_to do |format|
             if @account.save
@@ -48,7 +48,7 @@ class AccountsController < ApplicationController
       def destroy
         @account.destroy
         respond_to do |format|
-          format.html { redirect_to users_url, notice: "Account was successfully destroyed." }
+          format.html { redirect_to accounts_url, notice: "Account was successfully destroyed." }
           format.json { head :no_content }
         end
       end
