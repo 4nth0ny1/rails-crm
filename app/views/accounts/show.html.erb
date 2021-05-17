@@ -15,5 +15,9 @@
   <%= @account.phone %>
 </p>
 
+<h3>Contacts</h3>
+
+
+<%= link_to 'Add Contact', new_contact_path(@contact) %> |
 <%= link_to 'Edit', edit_account_path(@account) %> |
 <%= link_to 'Back', accounts_path %>
