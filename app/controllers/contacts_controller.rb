@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
     end
 
     def show 
-    end 
+    end ai
 
     def edit 
     end
