@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
     before_action :set_contact, only: %i[ show edit update destroy ]
 
-
     def index
         @contacts = Contact.all
     end 
@@ -22,6 +21,9 @@ class ContactsController < ApplicationController
       
           respond_to do |format|
             if @contact.save
+              # params[:contact][:account_ids].each do |id|
+              #   AccountsContacts.create(contact: @contact, account_ids: id)
+              # end 
               format.html { redirect_to @contact, notice: "Contact was successfully created." }
               format.json { render :show, status: :created, location: @contact }
             else
@@ -63,6 +65,6 @@ class ContactsController < ApplicationController
   
       # Only allow a list of trusted parameters through.
       def contact_params
-        params.require(:contact).permit(:first_name, :last_name, :email, :phone, :role)
+        params.require(:contact).permit(:first_name, :last_name, :phone, :email, :role)
       end
 end 

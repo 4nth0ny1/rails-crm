@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_191822) do
+ActiveRecord::Schema.define(version: 2021_05_17_015940) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "company_name"
@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 2021_05_16_191822) do
     t.integer "account_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
     t.index ["account_id"], name: "index_contacts_on_account_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "contacts_opportunities", id: false, force: :cascade do |t|
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_05_16_191822) do
 
   add_foreign_key "accounts", "users"
   add_foreign_key "contacts", "accounts"
+  add_foreign_key "contacts", "users"
   add_foreign_key "opportunities", "accounts"
   add_foreign_key "opportunities", "contacts"
 end
