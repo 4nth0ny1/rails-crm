@@ -28,6 +28,11 @@
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
 }
 
+.btn:hover {
+   background: yellowgreen;
+   padding: 12px 25px;
+}
+
  .home-container {
     background: #f8f8ff;
     max-width: 500px;
@@ -55,7 +60,7 @@
    transform: translateY(-50%);    
 }
 
-/* Animation */
+/* Animation from https://css-tricks.com/snippets/css/typewriter-effect/*/
 .anim-typewriter{
  animation: typewriter 4s steps(44) 1s 1 normal both,
             blinkTextCursor 500ms steps(44) infinite normal;
@@ -68,3 +73,5 @@
  from{border-right-color: rgba(255,255,255,.75);}
  to{border-right-color: transparent;}
 }
+
+
