@@ -14,23 +14,20 @@
  *= require_self
  */
 
-
-
-
  .form-container {
     max-width: 980px;
     margin: 0 auto;
  }
 
  .btn {
-   color: #FA8072;
-   background: #f8f8ff;
+   color: white;
+   background: green;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
 }
 
 .btn:hover {
    background: yellowgreen;
-   padding: 12px 25px;
+   
 }
 
  .home-container {
@@ -42,6 +39,21 @@
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
  }
+
+ .head-container {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .accounts-container {
+   background: #f8f8ff;
+   max-width: 800px;
+   height: 250px;
+   margin: 50px auto;
+   border-radius: 15px;
+   text-align: center;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+}
 
 .text-home-container {
    display: inline-block;
