@@ -5,3 +5,6 @@
 
 3. creating user classes (superuser, C-suite, Product Manager, Legal, CFO, Sales Manager, Sales Rep)
 
+4. create a scoring system for each opportunity
+
+5. add thought bubbles for training first time users
