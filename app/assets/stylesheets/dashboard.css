@@ -50,8 +50,6 @@
     background: linear-gradient(90deg, rgba(111,152,212,1) 0%, rgba(168,0,215,1) 100%);
 }
 
-
-
 .dash-connections {
     width: 50%;
 }
@@ -72,3 +70,14 @@
     width: 50%;
 }
 
+.dash-check {
+    width: 50%;
+}
+
+.dash-accounts {
+    width: 50%;
+}
+
+.dash-check-items-group {
+    text-align: center;
+}
