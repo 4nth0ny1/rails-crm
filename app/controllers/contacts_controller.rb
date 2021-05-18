@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
     end
 
     def show 
-    end ai
+    end 
 
     def edit 
     end
@@ -58,9 +58,7 @@ class ContactsController < ApplicationController
       private
       # Use callbacks to share common setup or constraints between actions.
       def set_contact
-        if current_user
           @contact = Contact.find(params[:id])
-        end
       end
   
       # Only allow a list of trusted parameters through.
