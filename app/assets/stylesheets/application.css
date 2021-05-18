@@ -98,34 +98,49 @@
 
 
 /* Account Show Page */
+
+.account-show-company-container {
+   margin: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   background: rgb(13,110,253);
+   background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(3,158,189,1) 100%);    
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+}
+
 .account-show-company {
    background: #f8f8ff;
    text-align: center;
-   padding: 5px;
+   margin: 10px;
+   padding: 10px;
+   border-radius: 10px;
    margin-bottom: 5px;
    border-radius: 15px;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
 
 }
 
+
 .contact-opportunity-divs {
-   background: #f8f8ff;
    display: flex;
 }
 
 .account-show-contact {
-   margin-right: 5px;
-   padding: 5px;
-   width: 100%;
-   border-radius: 15px;
+   background: #f8f8ff;
+   margin: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   width: 50%;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
 
 }
 
 .account-show-opportunities {
-   margin-left: 5px;
-   padding: 5px;
-   width: 100%;
+   background: #f8f8ff;
+   margin: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   width: 50%;
    border-radius: 15px;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
 

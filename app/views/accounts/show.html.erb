@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
+<div class="account-show-company-container">
+    <div class="account-show-company">
+        <h2><strong><%= @account.company_name %></strong></h2>
 
-<div class="account-show-company">
-    <h2><strong><%= @account.company_name %></strong></h2>
+        <p><strong>Address: </strong><%= @account.address %></p>
 
-    <p><strong>Address: </strong><%= @account.address %></p>
-
-    <p><strong>Phone: </strong><%= @account.phone %></p>
-    <%= link_to 'Edit', edit_account_path(@account) %> |
-    <%= link_to 'Back to Accounts', accounts_path %> |
-    <%= link_to 'Destroy', @account, method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
-
-<div class="contact-opportunity-divs">
-    <div class="account-show-contact">
-        <h3>Contacts</h3>
-        <%= link_to 'Add Contact', new_contact_path(@contact) %> 
+        <p><strong>Phone: </strong><%= @account.phone %></p>
+        <%= link_to 'Edit', edit_account_path(@account) %> |
+        <%= link_to 'Back to Accounts', accounts_path %> |
+        <%= link_to 'Destroy', @account, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 
-    <div class="account-show-opportunities">
-        <h3>Opportunities</h3>
-        <%= link_to 'Add Opportunity', new_opportunity_path(@opportunity) %> 
+    <div class="contact-opportunity-divs">
+        <div class="account-show-contact">
+            <h3>Contacts</h3>
+            <%= link_to 'Add Contact', new_contact_path(@contact) %> 
+        </div>
+
+        <div class="account-show-opportunities">
+            <h3>Opportunities</h3>
+            <%= link_to 'Add Opportunity', new_opportunity_path(@opportunity) %> 
+        </div>
     </div>
 </div>
