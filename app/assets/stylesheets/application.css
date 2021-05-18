@@ -87,3 +87,36 @@
 }
 
 
+/* Account Show Page */
+.account-show-company {
+   background: #f8f8ff;
+   text-align: center;
+   padding: 5px;
+   margin-bottom: 5px;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+
+}
+
+.contact-opportunity-divs {
+   background: #f8f8ff;
+   display: flex;
+}
+
+.account-show-contact {
+   margin-right: 5px;
+   padding: 5px;
+   width: 100%;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+
+}
+
+.account-show-opportunities {
+   margin-left: 5px;
+   padding: 5px;
+   width: 100%;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+
+}
