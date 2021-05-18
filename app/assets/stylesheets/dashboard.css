@@ -36,15 +36,28 @@
 }
 
 .progress-title {
+    margin-right: 10px;
+    max-width: 20%;
     word-wrap: break-word; 
 }
 
 .progress-bar {
-    margin: 2px;
+    margin-left: 10px;
+    max-width: 80%;
     background: rgb(111,152,212);
     background: linear-gradient(90deg, rgba(111,152,212,1) 0%, rgba(168,0,215,1) 100%);
 }
 
+.progress-section-one {
+    width: 20%;
+    border: 1px solid pink;
+}
+
+.progress-section-two {
+    width: 80%;
+    border: 1px solid green;
+
+}
 
 .dash-connections {
     width: 50%;
@@ -65,5 +78,4 @@
 .dash-opportunities {
     width: 50%;
 }
-
 
