@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h2><strong>Products:</strong><%= @opportunity.products %></h2>
+
+<p><strong>Contacts:</strong><%= @opportunity.contacts %></p>
+
+<h3>Contacts</h3>
+
+<%= link_to 'Add Opportunity', new_opportunity_path(@opportunity) %> |
+<%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |
+<%= link_to 'Back', opportunities_path %>
