@@ -28,36 +28,24 @@
     width: 60%;
 }
 
-.progress {
-    margin: 10px;
+.progress-collective-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
-.progress-title {
-    margin-right: 10px;
-    max-width: 20%;
-    word-wrap: break-word; 
+.progress-bar-container {
+    width: 80%;
+}
+
+.progress {
+    margin: 10px;
 }
 
 .progress-bar {
-    margin-left: 10px;
-    max-width: 80%;
     background: rgb(111,152,212);
     background: linear-gradient(90deg, rgba(111,152,212,1) 0%, rgba(168,0,215,1) 100%);
 }
 
-.progress-section-one {
-    width: 20%;
-    border: 1px solid pink;
-}
 
-.progress-section-two {
-    width: 80%;
-    border: 1px solid green;
-
-}
 
 .dash-connections {
     width: 50%;
