@@ -2,9 +2,8 @@
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
-    background: rgb(9,9,121);
-    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(5,110,131,1) 100%);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+    background: rgb(13,110,253);
+    background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(3,158,189,1) 100%);    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
 
 }
 

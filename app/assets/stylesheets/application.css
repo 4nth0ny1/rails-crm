@@ -14,9 +14,19 @@
  *= require_self
  */
 
+ body {
+    background: #f8f8ff;
+
+ }
+
  .form-container {
     max-width: 980px;
     margin: 0 auto;
+ }
+
+ .navbar {    
+   background: rgb(13,110,253);
+   background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(3,158,189,1) 100%);
  }
 
  .btn {
