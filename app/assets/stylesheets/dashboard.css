@@ -3,7 +3,8 @@
     padding: 10px;
     border-radius: 10px;
     background: rgb(13,110,253);
-    background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(3,158,189,1) 100%);    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+    background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(3,158,189,1) 100%);    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
 
 }
 
@@ -15,19 +16,26 @@
     box-shadow: 0 4px 8px 10px rgba(0,0,0,0.2);  
 }
 
+.dash-widget-section-container {
+    display: flex;
+}
+
 .dash-tasks {
-    width: 33%;
-    
+    width: 40%;
 }
 
 .dash-kpis {
-    width: 33%;
+    width: 60%;
+}
+
+.progress-bar {
+    margin: 2px;
 }
 
 .dash-connections {
-    width: 33%;
+    width: 60%;
 }
 
 .dash-opportunities {
-    width: 33%;
+    width: 40%;
 }
