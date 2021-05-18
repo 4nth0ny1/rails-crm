@@ -16,9 +16,7 @@ class ContactsController < ApplicationController
     end
 
     def create
-  
           @contact = current_user.contacts.build(contact_params)
-      
           respond_to do |format|
             if @contact.save
               # params[:contact][:account_ids].each do |id|
