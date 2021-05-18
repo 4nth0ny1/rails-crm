@@ -32,6 +32,11 @@
     display: flex;
 }
 
+.progress-title {
+    margin-top: 1px;
+    border: 1px solid white;
+}
+
 .progress-bar-container {
     width: 80%;
 }
