@@ -21,7 +21,20 @@
         <li class="nav-item">
           <%= link_to "Products", products_path, class:"nav-link text-white" %>
         </li>
+        <% if current_user %>
+        <li class="nav-item">
+          <%= link_to 'Log Out', logout_path, class:"nav-link text-white" %>
         </li>
+
+        <% else %> 
+          <li class="nav-item">
+            <%= link_to 'Sign Up', signup_path, class:"nav-link text-white"  %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Log In', login_path, class:"nav-link text-white"  %>
+          </li>
+        <% end %>
+        
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
