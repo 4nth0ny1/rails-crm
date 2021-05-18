@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div class="account-show-company">
+    <h2><strong><%= @product.name %></strong></h2>
+
+    <p><strong>Description: </strong><%= @product.description %></p>
+
+    <p><strong>Price: </strong><%= @product.price %></p>
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back to Product', products_path %> |
+    <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+

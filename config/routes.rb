@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :accounts
   resources :contacts
   resources :opportunities
+  resources :products
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signup', to: 'users#new', as: 'signup'
