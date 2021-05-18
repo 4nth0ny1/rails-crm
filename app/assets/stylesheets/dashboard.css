@@ -30,12 +30,27 @@
 
 .progress-bar {
     margin: 2px;
-}
+    background: rgb(111,152,212);
+    background: linear-gradient(90deg, rgba(111,152,212,1) 0%, rgba(168,0,215,1) 100%);}
 
 .dash-connections {
-    width: 60%;
+    width: 50%;
+}
+
+.dash-connections-items {
+    display: flex;
+    justify-content: space-between;
+    width: 66%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.dash-connections-items-group {
+    flex-direction: column;  
 }
 
 .dash-opportunities {
-    width: 40%;
+    width: 50%;
 }
+
+
