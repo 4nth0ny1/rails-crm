@@ -8,3 +8,5 @@
 4. create a scoring system for each opportunity
 
 5. add thought bubbles for training first time users
+
+6. link projects together (inventory, big-data, etc.)
