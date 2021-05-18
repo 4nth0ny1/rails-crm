@@ -81,3 +81,12 @@
 .dash-check-items-group {
     text-align: center;
 }
+
+.dash-links-container {
+    justify-content: space-between;
+}
+
+.dash-link-item {
+    text-decoration: none;
+    color: black;
+}
