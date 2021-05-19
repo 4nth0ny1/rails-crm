@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_171923) do
+ActiveRecord::Schema.define(version: 2021_05_19_190610) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "company_name"
@@ -88,6 +88,9 @@ ActiveRecord::Schema.define(version: 2021_05_18_171923) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "google_token"
     t.string "google_refresh_token"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
