@@ -13,11 +13,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <% if current_user.id == user.id %>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <% end %>
+        <td><%= link_to user.email, user %></td>
       </tr>
     <% end %>
   </tbody>
