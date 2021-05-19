@@ -1,4 +1,4 @@
-@import "font-awesome";
+
 
 
 .dash-container {
@@ -89,9 +89,14 @@
     width: 80%;
     margin: 0 auto;
     justify-content: space-between;
+    text-align: center;
 }
 
 .dash-link-item {
     text-decoration: none;
     color: black;
+}
+
+.fa-building {
+    font-size: 48px;
 }
