@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_190610) do
+ActiveRecord::Schema.define(version: 2021_05_19_222131) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "company_name"
@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 2021_05_19_190610) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
-  end
-
-  create_table "accounts_contacts", id: false, force: :cascade do |t|
-    t.integer "account_id", null: false
-    t.integer "contact_id", null: false
-    t.index ["account_id", "contact_id"], name: "index_accounts_contacts_on_account_id_and_contact_id"
-    t.index ["contact_id", "account_id"], name: "index_accounts_contacts_on_contact_id_and_account_id"
   end
 
   create_table "connections", force: :cascade do |t|
@@ -56,14 +49,10 @@ ActiveRecord::Schema.define(version: 2021_05_19_190610) do
   end
 
   create_table "opportunities", force: :cascade do |t|
-    t.string "products"
-    t.string "contacts"
     t.integer "account_id", null: false
-    t.integer "contact_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_opportunities_on_account_id"
-    t.index ["contact_id"], name: "index_opportunities_on_contact_id"
   end
 
   create_table "opportunities_products", id: false, force: :cascade do |t|
@@ -79,6 +68,8 @@ ActiveRecord::Schema.define(version: 2021_05_19_190610) do
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,5 +89,5 @@ ActiveRecord::Schema.define(version: 2021_05_19_190610) do
   add_foreign_key "contacts", "accounts"
   add_foreign_key "contacts", "users"
   add_foreign_key "opportunities", "accounts"
-  add_foreign_key "opportunities", "contacts"
+  add_foreign_key "products", "users"
 end

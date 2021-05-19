@@ -14,7 +14,10 @@
     <div class="contact-opportunity-divs">
         <div class="account-show-contact">
             <h3>Contacts</h3>
-            <%= link_to 'Add Contact', new_contact_path(@contact) %> 
+            <% @account.contacts.each do |contact| %>
+                <%= contact.first_name %>
+            <% end %> 
+            <%= link_to 'Add Contact', new_account_contact_path(@account) %> 
         </div>
 
         <div class="account-show-opportunities">

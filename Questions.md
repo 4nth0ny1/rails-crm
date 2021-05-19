@@ -8,3 +8,5 @@
 4. contacts page can't create because "account must exist"
 
 5. i want to make the div a link --- dashboard quick links
+
+6. can't get hover to wokr on navbar and going to add active link, but i assume i'll get the same problem

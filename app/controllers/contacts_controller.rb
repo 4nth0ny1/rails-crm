@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
     end 
 
     def new
-        @contact = Contact.new
+        @contact = Contact.new(account_id: params[:account_id])
     end
 
     def show 
@@ -16,6 +16,7 @@ class ContactsController < ApplicationController
     end
 
     def create
+          
           @contact = current_user.contacts.build(contact_params)
           respond_to do |format|
             if @contact.save
@@ -61,6 +62,6 @@ class ContactsController < ApplicationController
   
       # Only allow a list of trusted parameters through.
       def contact_params
-        params.require(:contact).permit(:first_name, :last_name, :phone, :email, :role)
+        params.require(:contact).permit(:first_name, :last_name, :phone, :email, :role, :account_id)
       end
 end 

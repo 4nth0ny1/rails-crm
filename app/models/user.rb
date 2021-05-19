@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :accounts
     has_many :contacts 
     has_many :opportunities
+    has_many :products
 
     def self.from_omniauth(auth)
         # Creates a new user only if it doesn't exist

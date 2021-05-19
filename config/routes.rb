@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   
   resources :users
-  resources :accounts
-  resources :contacts
+  resources :accounts do 
+      resources :contacts, only: [:new]
+  end 
+  resources :contacts, except: [:new]
+
   resources :opportunities
   resources :products
   resources :dashboards
