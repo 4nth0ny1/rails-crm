@@ -46,7 +46,8 @@
  .home-container {
     background: #f8f8ff;
     max-width: 500px;
-    height: 250px;
+    height: 350px;
+    padding: 50px;
     margin: 50px auto;
     border-radius: 15px;
     text-align: center;
@@ -155,4 +156,8 @@
 
 .navbar-div-2 {
    justify-content: right;
+}
+
+.nav-item:hover {
+   text-color: green;
 }

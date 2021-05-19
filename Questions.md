@@ -8,5 +8,3 @@
 4. contacts page can't create because "account must exist"
 
 5. i want to make the div a link --- dashboard quick links
-
-6. the edit button for users/edit is not working. the information is not showing up. 
