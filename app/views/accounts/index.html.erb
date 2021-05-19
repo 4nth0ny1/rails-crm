@@ -13,12 +13,15 @@
   </thead>
 
   <tbody>
+  
     <% @accounts.each do |account| %>
+      <% if current_user.id == account.user_id %>
       <tr>
         <td><%= link_to account.company_name, account %></td>
         <td><%= account.address %></td>
         <td><%= account.phone %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
