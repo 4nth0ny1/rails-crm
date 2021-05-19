@@ -10,3 +10,5 @@
 5. add thought bubbles for training first time users
 
 6. link projects together (inventory, big-data, etc.)
+
+7. add a chart that allows you to turn on/off lines like (new accounts, connections, emails, calls, social, new opportunities, sales) gem chartkick.com
