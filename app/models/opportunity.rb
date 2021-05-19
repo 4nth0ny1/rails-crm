@@ -1,4 +1,6 @@
 class Opportunity < ApplicationRecord
     belongs_to :account
-	has_many :opportunity_contacts
+    belongs_to :user
+    belongs_to :contact
+    belongs_to :product
 end

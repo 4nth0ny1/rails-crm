@@ -6,7 +6,7 @@ class OpportunitiesController < ApplicationController
     end 
 
     def new
-        @opportunity = Opportunity.new
+        @opportunity = Opportunity.new(account_id: params[:account_id])
     end
 
     def show 
@@ -17,7 +17,7 @@ class OpportunitiesController < ApplicationController
 
     def create
   
-          @opportunity = current_user.opportunities.build(account_params)
+          @opportunity = current_user.opportunities.build(opportunity_params)
       
           respond_to do |format|
             if @opportunity.save
@@ -60,6 +60,6 @@ class OpportunitiesController < ApplicationController
   
       # Only allow a list of trusted parameters through.
       def opportunity_params
-        params.require(:opportunity).permit(:products, :contacts)
+        params.require(:opportunity).permit(:account_id, :product_id, :contact_id, :user_id)
       end
 end 

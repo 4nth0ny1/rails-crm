@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_222131) do
+ActiveRecord::Schema.define(version: 2021_05_19_231001) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "company_name"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 2021_05_19_222131) do
   create_table "connections", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.integer "contact_id"
+    t.integer "product_id"
+    t.integer "opportunity_id"
+    t.integer "account_id", null: false
+    t.text "notes", null: false
+    t.string "connection_type", null: false
+    t.boolean "opportunity_check", default: false, null: false
+    t.index ["account_id"], name: "index_connections_on_account_id"
+    t.index ["contact_id"], name: "index_connections_on_contact_id"
+    t.index ["opportunity_id"], name: "index_connections_on_opportunity_id"
+    t.index ["product_id"], name: "index_connections_on_product_id"
+    t.index ["user_id"], name: "index_connections_on_user_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -52,7 +65,13 @@ ActiveRecord::Schema.define(version: 2021_05_19_222131) do
     t.integer "account_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "product_id", null: false
+    t.integer "contact_id", null: false
+    t.integer "user_id", null: false
     t.index ["account_id"], name: "index_opportunities_on_account_id"
+    t.index ["contact_id"], name: "index_opportunities_on_contact_id"
+    t.index ["product_id"], name: "index_opportunities_on_product_id"
+    t.index ["user_id"], name: "index_opportunities_on_user_id"
   end
 
   create_table "opportunities_products", id: false, force: :cascade do |t|
@@ -86,8 +105,16 @@ ActiveRecord::Schema.define(version: 2021_05_19_222131) do
   end
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "connections", "accounts"
+  add_foreign_key "connections", "contacts"
+  add_foreign_key "connections", "opportunities"
+  add_foreign_key "connections", "products"
+  add_foreign_key "connections", "users"
   add_foreign_key "contacts", "accounts"
   add_foreign_key "contacts", "users"
   add_foreign_key "opportunities", "accounts"
+  add_foreign_key "opportunities", "contacts"
+  add_foreign_key "opportunities", "products"
+  add_foreign_key "opportunities", "users"
   add_foreign_key "products", "users"
 end

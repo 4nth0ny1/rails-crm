@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <div class="head-container">
-  <h1>Opportunities</h1>
-  <%= link_to 'Create Opportunity', new_opportunity_path, class:"btn btn-primary" %>
 </div>
 
 <table class="table">
@@ -15,8 +13,8 @@
   <tbody>
     <% @opportunities.each do |opportunity| %>
       <tr>
-        <td><%= opportunity.products %></td>
-        <td><%= opportunity.contacts %></td>
+        <td><%= opportunity.product.name %></td>
+        <td><%= opportunity.contact.first_name %></td>
         <td><%= link_to 'Show', opportunity %></td>
         <td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
         <td><%= link_to 'Destroy', opportunity, method: :delete, data: { confirm: 'Are you sure?' } %></td>

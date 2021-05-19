@@ -1,34 +1,35 @@
 <div class="form-container">
   <%= form_with(model: opportunity) do |form| %>
+      <%= form.hidden_field :account_id, value: opportunity.account_id %>
 
-  <% if opportunity.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(opportunity.errors.count, "error") %> prohibited this opportunity from being saved:</h2>
+            <% if opportunity.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(opportunity.errors.count, "error") %> prohibited this opportunity from being saved:</h2>
 
-      <ul>
-        <% opportunity.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+                <ul>
+                  <% opportunity.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+     
+            <div class="field mb-3">
+                <%= form.label :product_id, class: "form-label" %>
+                <%= form.select :product_id, Product.all.map {|product| ["#{product.name} - $#{product.price}", product.id]}, class: "form-control" %>
+            </div>
+
+            <div class="field mb-3">
+                <%= form.label :contact_id, class: "form-label" %>
+                <%= form.select :contact_id, opportunity.account.contacts.map {|contact| ["#{contact.first_name} #{contact.last_name}", contact.id]}, class: "form-control" %>
+            </div>
+
+            <div class="actions">
+                <%= form.submit %>
+            </div>
+
         <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-    <form>
-        <div class="field mb-3">
-            <label class="form-label"><%= form.label :products %></label>
-            <div class="form-control"><%= form.text_field :products %></div>
-        </div>
-
-        <div class="field mb-3">
-            <label class="form-label"><%= form.label :contacts %></label>
-            <div class="form-control"><%= form.text_field :contacts %></div>
-        </div>
-
-        <div class="actions">
-            <%= form.submit %>
-        </div>
-
-        <% end %>
-    </form>
+   
 
 </div>

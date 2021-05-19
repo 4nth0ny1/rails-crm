@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   resources :users
   resources :accounts do 
       resources :contacts, only: [:new]
+      resources :opportunities, only: [:new]
   end 
   resources :contacts, except: [:new]
-
-  resources :opportunities
+  resources :opportunities, except: [:new]
   resources :products
   resources :dashboards
   resources :sessions, only: [:new, :create, :destroy]
