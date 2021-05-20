@@ -1,0 +1,28 @@
+<div class="form-container">
+  <%= form_with(model: connection) do |form| %>
+      <%= form.hidden_field :account_id, value: connection.account_id %>
+        <% if connection.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(connection.errors.count, "error") %> prohibited this connection from being saved:</h2>
+
+            <ul>
+              <% connection.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+    
+        <div class="field mb-3">
+            <%= form.label :notes, class: "form-label"  %>
+            <%= form.text_field :notes, class:"form-control" %>
+        </div>
+
+        <div class="actions">
+            <%= form.submit %>
+        </div>
+
+  <% end %>
+    
+
+</div>
