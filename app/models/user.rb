@@ -6,6 +6,9 @@ class User < ApplicationRecord
     has_many :opportunities
     has_many :products
 
+    scope :catullo, -> { where(last_name: "Catullo") }
+    scope :by_first_name, -> { order(first_name: :desc) }
+
     def self.from_omniauth(auth)
         # Creates a new user only if it doesn't exist
         where(email: auth.info.email).first_or_initialize do |user|

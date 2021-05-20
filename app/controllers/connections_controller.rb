@@ -1,0 +1,4 @@
+class ConnectionsController < ApplicationController
+
+
+end 
