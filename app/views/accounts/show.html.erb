@@ -13,12 +13,26 @@
 
     <div class="contact-opportunity-divs">
         <div class="account-show-opportunities">
-            <h3>Connections</h3>
-            <% @account.connections.each do |connection| %>
-                
-                <%= connection.notes %>
-            <% end %> 
-            <%= link_to 'Add Connection', new_account_connection_path(@account) %> 
+            <table class="table">
+                <thead>
+                <h3>Connections</h3>
+                    <tr>
+                        <th>Date</th>
+                        <th>Connection Type</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <% @account.connections.each do |connection| %>
+                            <td><%= connection.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
+                            <td><%= connection.connection_type %></td>
+                            <td><%= connection.notes %></td>
+                    </tr>
+                        <% end %>
+                    
+                </tbody>
+            </table>
         </div>
     </div>
 
