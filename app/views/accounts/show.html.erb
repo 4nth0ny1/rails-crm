@@ -6,9 +6,9 @@
         <p><strong>Address: </strong><%= @account.address %></p>
 
         <p><strong>Phone: </strong><%= @account.phone %></p>
-        <%= link_to 'Edit', edit_account_path(@account) %> |
-        <%= link_to 'Back to Accounts', accounts_path %> |
-        <%= link_to 'Destroy', @account, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_account_path(@account), class:"btn btn-warning" %> 
+        <%= link_to 'Back to Accounts', accounts_path, class:"btn btn-info" %> 
+        <%= link_to 'Destroy', @account, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 
     
