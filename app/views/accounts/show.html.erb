@@ -12,6 +12,17 @@
     </div>
 
     <div class="contact-opportunity-divs">
+        <div class="account-show-opportunities">
+            <h3>Connections</h3>
+            <% @account.connections.each do |connection| %>
+                
+                <%= connection.notes %>
+            <% end %> 
+            <%= link_to 'Add Connection', new_account_connection_path(@account) %> 
+        </div>
+    </div>
+
+    <div class="contact-opportunity-divs">
         <div class="account-show-contact">
             <h3>Contacts</h3>
             <% @account.contacts.each do |contact| %>
@@ -28,13 +39,6 @@
             <%= link_to 'Add Opportunity', new_account_opportunity_path(@account) %> 
         </div>
 
-
-        <div class="account-show-opportunities">
-            <h3>Connections</h3>
-            <% @account.connections.each do |connection| %>
-                <%= connection.notes %>
-            <% end %> 
-            <%= link_to 'Add Connection', new_account_connection_path(@account) %> 
-        </div>
     </div>
+
 </div>

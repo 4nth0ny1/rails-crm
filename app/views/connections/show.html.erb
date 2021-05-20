@@ -11,5 +11,13 @@
   <%= @connection.notes %>
 </p>
 
+<p>
+  <strong>Date:</strong>
+  <%= @connection.show_date.strftime("%I:%M%p on %m/%d/%Y") %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_connection_path(@connection) %> |
 <%= link_to 'Back', connection_path %>
+
