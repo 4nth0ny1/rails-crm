@@ -11,8 +11,8 @@
         <%= link_to 'Destroy', @account, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 
-    <div class="contact-opportunity-divs">
-        <div class="account-show-opportunities">
+    
+        <div class="connections-show">
             <table class="table">
                 <thead>
                 <h3>Connections</h3>
@@ -20,6 +20,7 @@
                         <th>Date</th>
                         <th>Connection Type</th>
                         <th>Notes</th>
+                        <th>Opportunity Check</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,13 +29,15 @@
                             <td><%= connection.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
                             <td><%= connection.connection_type %></td>
                             <td><%= connection.notes %></td>
+                            <td><%= connection.opportunity_check %></td>
                     </tr>
                         <% end %>
                     
                 </tbody>
             </table>
+            <%= link_to 'Add Connection', new_account_connection_path(@account) %> 
         </div>
-    </div>
+  
 
     <div class="contact-opportunity-divs">
         <div class="account-show-contact">
