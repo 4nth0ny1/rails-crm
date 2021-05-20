@@ -14,8 +14,18 @@
         <% end %>
     
         <div class="field mb-3">
+            <%= form.label :connection_type, class: "form-label"  %>
+            <%= form.text_field :connection_type, class:"form-control" %>
+        </div>
+
+        <div class="field mb-3">
             <%= form.label :notes, class: "form-label"  %>
             <%= form.text_field :notes, class:"form-control" %>
+        </div>
+
+        <div class="field mb-3">
+            <%= form.label :opportunity_check, class: "form-label"  %>
+            <%= form.text_field :opportunity_check, class:"form-control" %>
         </div>
 
         <div class="actions">
