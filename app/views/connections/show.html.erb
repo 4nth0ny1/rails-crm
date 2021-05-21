@@ -1,11 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p><strong>Notes: </strong><%= @connection.notes %></p>
+<div class="show-container">
+  <div class="home-container">
 
-<p><strong>Connection Type: </strong><%= @connection.connection_type %></p>
+        <p><strong>Notes: </strong><%= @connection.notes %></p>
+        <p><strong>Connection Type: </strong><%= @connection.connection_type %></p>
+        <p><strong>Date: </strong><%= @connection.created_at.strftime("%I:%M%p on %m/%d/%Y") %></p>
 
-<p><strong>Date: </strong><%= @connection.created_at.strftime("%I:%M%p on %m/%d/%Y") %></p>
+        <%= link_to 'Edit', edit_connection_path(@connection), class:"btn btn-warning"  %> 
+        <%= link_to 'Back', @connection.account, class:"btn btn-info"  %>
 
-<%= link_to 'Edit', edit_connection_path(@connection), class:"btn btn-warning"  %> 
-<%= link_to 'Back', @connection.account, class:"btn btn-info"  %>
-
+    </div>
+</div>

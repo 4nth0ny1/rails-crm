@@ -1,10 +1,17 @@
 <p id="notice"><%= notice %></p>
-<h1>Opportunity</h1>
-<p><strong>Products: </strong><%= @opportunity.product.name %></p>
 
-<p><strong>Contacts: </strong><%= @opportunity.contact.first_name %> <%= @opportunity.contact.last_name %>, <%= @opportunity.contact.role %></p>
+<div class="show-container">
+  <div class="home-container">
+
+        <h1>Opportunity</h1>
+        <p><strong>Products: </strong><%= @opportunity.product.name %></p>
+
+        <p><strong>Contacts: </strong><%= @opportunity.contact.first_name %> <%= @opportunity.contact.last_name %>, <%= @opportunity.contact.role %></p>
 
 
 
-<%= link_to 'Edit', edit_opportunity_path(@opportunity), class:"btn btn-warning"  %> 
-<%= link_to 'Back', @opportunity.account, class:"btn btn-info"  %>
+        <%= link_to 'Edit', edit_opportunity_path(@opportunity), class:"btn btn-warning"  %> 
+        <%= link_to 'Back', @opportunity.account, class:"btn btn-info"  %>
+
+</div>
+</div>
