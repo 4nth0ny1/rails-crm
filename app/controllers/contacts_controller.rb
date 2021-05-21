@@ -10,6 +10,7 @@ class ContactsController < ApplicationController
     end
 
     def show 
+      
     end 
 
     def edit 
@@ -20,9 +21,6 @@ class ContactsController < ApplicationController
           @contact = current_user.contacts.build(contact_params)
           respond_to do |format|
             if @contact.save
-              # params[:contact][:account_ids].each do |id|
-              #   AccountsContacts.create(contact: @contact, account_ids: id)
-              # end 
               format.html { redirect_to @contact, notice: "Contact was successfully created." }
               format.json { render :show, status: :created, location: @contact }
             else

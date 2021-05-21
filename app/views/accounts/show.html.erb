@@ -26,7 +26,7 @@
                 <tbody>
                     <tr>
                         <% @account.connections.each do |connection| %>
-                            <td><%= connection.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
+                            <td><%= link_to connection.created_at.strftime("%I:%M%p on %m/%d/%Y"), connection %></td>
                             <td><%= connection.connection_type %></td>
                             <td><%= connection.notes %></td>
                             <td><%= connection.opportunity_check %></td>
@@ -55,7 +55,7 @@
                     <tbody>
                         <tr>
                             <% @account.contacts.each do |contact| %>
-                                <td><%= contact.first_name %></td>
+                                <td><%= link_to contact.first_name, contact %></td>
                                 <td><%= contact.last_name %></td>
                                 <td><%= contact.role %></td>
                                 <td><%= contact.phone %></td>
