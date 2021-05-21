@@ -8,6 +8,7 @@
     <tr>
       <th>Product Name</th>
       <th>Contact</th>
+      <th>Account</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +17,8 @@
     <% @opportunities.each do |opportunity| %>
       <tr>
         <td><%= opportunity.product.name %></td>
-        <td><%= opportunity.contact.first_name %></td>
+        <td><%= opportunity.contact.first_name %> <%= opportunity.contact.last_name %></td>
+        <td><%= link_to opportunity.account.company_name, opportunity.account %></td>
         <td><%= link_to 'Show', opportunity %></td>
         <td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
         <td><%= link_to 'Destroy', opportunity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
