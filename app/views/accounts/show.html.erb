@@ -84,7 +84,7 @@
                         <tr>
                             <% @account.opportunities.each do |opportunity| %>
                                 <td><%= opportunity.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
-                                <td><%= opportunity.product.name %></td>
+                                <td><%= link_to opportunity.product.name, opportunity %></td>
                                 <td><%= opportunity.product.price %></td>
                         </tr>
                             <% end %>
