@@ -59,7 +59,7 @@
 
 .dash-connections-items {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 66%;
     text-align: center;
     margin: 0 auto;
