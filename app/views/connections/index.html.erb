@@ -7,6 +7,8 @@
     <tr>
       <th>Notes</th>
       <th>Date</th>
+      <th>Account</th>
+      <th>Contact</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +18,9 @@
       <tr>
         <td><%= connection.notes %></td>
         <td><%= connection.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
+        <td><%= connection.account.company_name %></td>
+       
+        
 
         <td><%= link_to 'Show', connection %></td>
         <td><%= link_to 'Edit', edit_connection_path(connection) %></td>

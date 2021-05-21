@@ -5,7 +5,5 @@ class Connection < ApplicationRecord
     belongs_to :opportunity, required: false
 
 
-    def show_date 
-        DateTime.now
-    end 
+
 end
