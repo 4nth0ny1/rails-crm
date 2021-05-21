@@ -1,10 +1,15 @@
 <p id="notice"><%= notice %></p>
+<div class="show-container">
+  <div class="home-container">
 
 
-<p><strong><%= @contact.first_name %> <%= @contact.last_name %></strong></p>
-<p><strong>Phone: </strong><%= @contact.phone %></p>
-<p><strong>Email: </strong><%= @contact.email %></p>
-<p><strong>Role: </strong><%= @contact.role %></p>
+    <p><strong><%= @contact.first_name %> <%= @contact.last_name %>, <%= @contact.role %></strong></p>
+    <p><%= link_to @contact.account.company_name, @contact.account %></p>
+    <p><strong>Phone: </strong><%= @contact.phone %></p>
+    <p><strong>Email: </strong><%= @contact.email %></p>
 
-<%= link_to 'Edit', edit_contact_path(@contact), class:"btn btn-warning"  %> 
-<%= link_to 'Back', @contact.account, class:"btn btn-info" %>
+
+    <%= link_to 'Edit', edit_contact_path(@contact), class:"btn btn-warning"  %> 
+    <%= link_to 'Back', @contact.account, class:"btn btn-info" %>
+    </div>
+</div>
