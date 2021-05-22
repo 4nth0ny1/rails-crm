@@ -1,9 +1,7 @@
 <div class="dash-container">
     <div class="dash-widget-section-container">
         <div class="dash-widget-container dash-tasks">
-            
             <%= render partial: "tasks/tasks", locals: {tasks: current_user.tasks} %>
-
         </div>
         <div class="dash-widget-container dash-kpis">
             <h4>KPIs</h4>
@@ -43,16 +41,18 @@
             <h4>Today's Connections</h4>
             <div class="dash-connections-items">
                 <div class="dash-connections-items-group">
-                    <p>Calls</p><h2>45</h2>
+                    <p>Calls</p><h2><%= Connection.calls_today.count %></h2>
                 </div>
                 <div class="dash-connections-items-group">
-                    <p>Emails</p><h2>45</h2>
+                    <p>Emails</p><h2><%= Connection.emails_today.count %></h2>
                 </div>
    
             </div>
         </div>
         <div class="dash-widget-container dash-opportunities">
             <h4>New Opportunities</h4>
+            <%= render partial: "opportunities/opportunities", locals: {opportunities: current_user.opportunities.weekly_opps} %>
+
         </div>
     </div>
 

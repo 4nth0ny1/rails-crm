@@ -2,7 +2,7 @@ class ConnectionsController < ApplicationController
     before_action :set_connection, only: %i[ show edit update destroy ]
 
     def index
-        @connections = Connection.all
+        @connections = Connection.by_date
     end 
 
     def new
@@ -18,15 +18,16 @@ class ConnectionsController < ApplicationController
     def create
           
           @connection = current_user.connections.build(connection_params)
-          respond_to do |format|
             if @connection.save
-              format.html { redirect_to @connection, notice: "Connection was successfully created." }
-              format.json { render :show, status: :created, location: @connection }
+              if @connection.opportunity_check 
+                current_user.opportunities.create(product: @connection.product, contact: @connection.contact, account: @connection.account)
+                redirect_to @connection.account
+              else
+                redirect_to @connection, notice: "Connection was successfully created."
+              end
             else
-              format.html { render :new, status: :unprocessable_entity }
-              format.json { render json: @connection.errors, status: :unprocessable_entity }
+              render :new, status: :unprocessable_entity 
             end
-          end
         
       end
 

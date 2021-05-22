@@ -15,7 +15,7 @@
     
         <div class="field mb-3">
             <%= form.label :connection_type, class: "form-label"  %>
-            <%= form.text_field :connection_type, class:"form-control" %>
+            <%= form.select :connection_type, ["call", "email"], class:"form-control" %>
         </div>
 
 
@@ -25,15 +25,25 @@
             <%= form.text_field :notes, class:"form-control" %>
         </div>
 
+          
         <div class="field mb-3">
-            <%= form.label :opportunity_check, class: "form-label"  %>
-            <%= form.text_field :opportunity_check, class:"form-control" %>
+            <%= form.label :product_id, class: "form-label" %>
+            <%= form.select :product_id, Product.all.map {|product| ["#{product.name} - #{number_to_currency(product.price)}", product.id]}, class: "form-control" %>
         </div>
 
-        <div class="field mb-3">
-            <%= form.label :contact_id, class: "form-label" %>
-            <%= form.select :contact_id, connection.account.contacts.map {|contact| ["#{contact.first_name} #{contact.last_name}", contact.id]}, class: "form-control" %>
-        </div>
+        <% if connection.account.contacts.present? %>
+          <div class="field mb-3">
+              <%= form.label :opportunity_check, class: "form-label"  %>
+              <%= form.check_box :opportunity_check%>
+          </div>
+        <% end %>
+
+        <% if connection.account.contacts.present? %>
+          <div class="field mb-3">
+              <%= form.label :contact_id, class: "form-label" %>
+              <%= form.select :contact_id, connection.account.contacts.map {|contact| ["#{contact.first_name} #{contact.last_name}", contact.id]}, class: "form-control" %>
+          </div>
+        <% end %>
 
         <div class="actions">
             <%= form.submit %>

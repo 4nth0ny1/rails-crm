@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+       
+            <tr>
+                <th>Date Creation: </th>
+                <th>Product Name: </th>
+                <th>Contact: </th>
+                <th>Price: </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <% opportunities.each do |opportunity| %>
+                    <td><%= opportunity.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
+                    <td><%= link_to opportunity.product.name, opportunity %></td>
+                    <td>
+                        <% if opportunity.contact%>
+                            <%= opportunity.contact.name %>
+                        <% end %> 
+                    </td>
+                    <td><%= number_to_currency(opportunity.product.price) %></td>
+            </tr>
+                <% end %>
+        </tbody>
+</table>
