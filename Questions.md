@@ -23,3 +23,10 @@ new accounts created
 income goal 
 projected income
 signed contracts
+
+Tasks table 
+Date to connect
+Contact Id
+Notes 
+Account Id 
+
