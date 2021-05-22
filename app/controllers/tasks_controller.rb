@@ -6,7 +6,7 @@ class TasksController < ApplicationController
       end 
   
       def new
-          @task = Task.new
+          @task = Task.new(account_id: params[:account_id])
       end
   
       def show 
@@ -60,7 +60,7 @@ class TasksController < ApplicationController
     
         # Only allow a list of trusted parameters through.
         def task_params
-          params.require(:task).permit(:date, :notes, :account_id, :contact_id, user_id)
+          params.require(:task).permit(:date, :notes, :account_id, :contact_id, :user_id)
         end
   
   end 

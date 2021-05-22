@@ -1,96 +1,14 @@
 <p id="notice"><%= notice %></p>
+
 <div class="show-container">
-    <div class="account-show-company">
-        <h2><strong><%= @account.company_name %></strong></h2>
+  <div class="home-container">
+        
+        <h2><strong><%= @task.date %></strong></h2>
+        
+        <p><strong>Notes: </strong><%= @task.notes %></p>
 
-        <p><strong>Address: </strong><%= @account.address %></p>
-
-        <p><strong>Phone: </strong><%= @account.phone %></p>
-        <%= link_to 'Edit', edit_account_path(@account), class:"btn btn-warning" %> 
-        <%= link_to 'Back to Accounts', accounts_path, class:"btn btn-info" %> 
-        <%= link_to 'Destroy', @account, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_task_path(@task), class:"btn btn-warning" %> 
+        <%= link_to 'Destroy', @task, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 
-    
-        <div class="connections-show">
-            <table class="table">
-                <thead>
-                <h3>Connections</h3>
-                    <tr>
-                        <th>Date</th>
-                        <th>Connection Type</th>
-                        <th>Notes</th>
-                        <th>Opportunity Check</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <% @account.connections.each do |connection| %>
-                            <td><%= link_to connection.created_at.strftime("%I:%M%p on %m/%d/%Y"), connection %></td>
-                            <td><%= connection.connection_type %></td>
-                            <td><%= connection.notes %></td>
-                            <td><%= connection.opportunity_check %></td>
-                    </tr>
-                        <% end %>
-                    
-                </tbody>
-            </table>
-            <%= link_to 'Add Connection', new_account_connection_path(@account) %> 
-        </div>
-
-    
-        <div class="connections-show">
-            <table class="table">
-                <thead>
-                    <h3>Contacts</h3>
-                        <tr>
-                            <th>First Name: </th>
-                            <th>Last Name: </th>
-                            <th>Role: </th>
-                            <th>Phone: </th>
-                            <th>Email: </th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <% @account.contacts.each do |contact| %>
-                                <td><%= link_to contact.first_name, contact %></td>
-                                <td><%= contact.last_name %></td>
-                                <td><%= contact.role %></td>
-                                <td><%= contact.phone %></td>
-                                <td><%= contact.email %></td>
-                        </tr>
-                            <% end %>
-                        
-                    </tbody>
-            </table>
-            <%= link_to 'Add Contact', new_account_contact_path(@account) %> 
-        </div>
-
-        <div class="connections-show">
-            <table class="table">
-                <thead>
-                    <h3>Opportunities</h3>
-                        <tr>
-                            <th>Date Creation: </th>
-                            <th>Product Name: </th>
-                            <th>Contact: </th>
-                            <th>Price: </th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <% @account.opportunities.each do |opportunity| %>
-                                <td><%= opportunity.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
-                                <td><%= link_to opportunity.product.name, opportunity %></td>
-                                <td><%= opportunity.product.price %></td>
-                        </tr>
-                            <% end %>
-                    </tbody>
-            </table>
-            <%= link_to 'Add Opportunity', new_account_opportunity_path(@account) %> 
-        </div>
-  
 </div>

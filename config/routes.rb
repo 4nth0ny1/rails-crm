@@ -9,12 +9,14 @@ Rails.application.routes.draw do
       resources :contacts, only: [:new]
       resources :opportunities, only: [:new]
       resources :connections, only: [:new]
+      resources :tasks, only: [:new]
   end 
   resources :contacts, except: [:new]
   resources :opportunities, except: [:new]
   resources :connections, except: [:new]
   resources :products
   resources :dashboards
+  resources :tasks, except: [:new]
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signup', to: 'users#new', as: 'signup'

@@ -1,39 +1,46 @@
 <div class="form-container">
-  <%= form_with(model: account) do |form| %>
+ <%= form_with(model: task) do |form| %>
+    <%= form.hidden_field :account_id, value: task.account_id %>
+   
 
-  <% if account.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <% if task.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-      <ul>
-        <% account.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-    <form>
-        <div class="field mb-3">
-            <label class="form-label"><%= form.label :company_name %></label>
-            <div class="form-control"><%= form.text_field :company_name %></div>
+          <ul>
+            <% task.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
         </div>
+      <% end %>
 
-        <div class="field mb-3">
-            <label class="form-label"><%= form.label :address %></label>
-            <div class="form-control"><%= form.text_field :address %></div>
-        </div>
+        <form>
+            <div class="field mb-3">
+                <label class="form-label"><%= form.label :date %></label>
+                <div class="form-control"><%= form.text_field :date %></div>
+            </div>
 
-        <div class="field mb-3">
-            <label class="form-label"><%= form.label :phone %></label>
-            <div class="form-control"><%= form.text_field :phone %></div>
-        </div>
+            <div class="field mb-3">
+                <label class="form-label"><%= form.label :notes %></label>
+                <div class="form-control"><%= form.text_field :notes %></div>
+            </div>
 
-        <div class="actions">
-            <%= form.submit %>
-        </div>
+            <div class="field mb-3">
+                <%= form.label :account_id, class: "form-label" %>
+                <%= form.select :account_id, Account.all.map {|account| ["#{account.compnay_name}", account.id]}, class: "form-control" %>
+            </div>
 
-        <% end %>
-    </form>
+            <div class="field mb-3">
+                <%= form.label :contact_id, class: "form-label" %>
+                <%= form.select :contact_id, task.account.contacts.map {|contact| ["#{contact.first_name} #{contact.last_name}", contact.id]}, class: "form-control" %>
+            </div>
+
+          <div class="actions">
+                <%= form.submit %>
+          </div>
+
+          <% end %>
+      </form>
 
 </div>
