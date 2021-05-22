@@ -13,3 +13,13 @@
 
 
 <%= page_state(dashboards_path) %>"
+
+
+Add KPI table 
+
+calls 
+opportunities created 
+new accounts created
+income goal 
+projected income
+signed contracts

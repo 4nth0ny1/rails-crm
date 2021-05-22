@@ -4,14 +4,12 @@
   <div class="home-container">
 
         <h1>Opportunity</h1>
+        <h3><%= @opportunity.account.company_name %></h3>        
+        <p><strong>Date Created: </strong><%= @opportunity.created_at.strftime("%I:%M%p on %m/%d/%Y") %></p>
         <p><strong>Products: </strong><%= @opportunity.product.name %></p>
-
         <p><strong>Contacts: </strong><%= @opportunity.contact.first_name %> <%= @opportunity.contact.last_name %>, <%= @opportunity.contact.role %></p>
-
-
 
         <%= link_to 'Edit', edit_opportunity_path(@opportunity), class:"btn btn-warning"  %> 
         <%= link_to 'Back', @opportunity.account, class:"btn btn-info"  %>
-
-</div>
+  </div>
 </div>

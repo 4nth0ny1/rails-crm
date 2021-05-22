@@ -2,13 +2,13 @@
 
 <div class="show-container">
   <div class="home-container">
+        
         <h2><strong><%= @product.name %></strong></h2>
-
+        
         <p><strong>Description: </strong><%= @product.description %></p>
 
         <p><strong>Price: </strong><%= @product.price %></p>
         <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-warning" %> 
-        <%= link_to 'Back to Product', products_path, class:"btn btn-info"  %> 
         <%= link_to 'Destroy', @product, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 
