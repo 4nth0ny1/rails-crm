@@ -22,7 +22,7 @@
       <tr>
         <td><%= link_to account.company_name, account %></td>
         <td><%= account.address %></td>
-        <td><%= account.phone %></td>
+        <td><%= number_to_phone(account.phone, area_code: true, delimiter: "-") %></td>
       </tr>
       <% end %>
     <% end %>

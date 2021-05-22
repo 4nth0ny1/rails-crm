@@ -32,3 +32,7 @@ Account Id
 
 views dashboard and account page 
 can 
+
+Things to fix 
+can't edit tasks
+when editing a connection, i can't turn into an opportunity. want to remove the opportunity check box for existing connections

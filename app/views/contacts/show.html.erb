@@ -5,7 +5,7 @@
 
     <p><strong><%= @contact.first_name %> <%= @contact.last_name %>, <%= @contact.role %></strong></p>
     <p><%= link_to @contact.account.company_name, @contact.account %></p>
-    <p><strong>Phone: </strong><%= @contact.phone %></p>
+    <p><strong>Phone: </strong><%= number_to_phone(@contact.phone, area_code: true, delimiter: "-") %></p>
     <p><strong>Email: </strong><%= @contact.email %></p>
 
 

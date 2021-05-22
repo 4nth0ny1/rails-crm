@@ -2,7 +2,7 @@
 
 <div class="head-container">
   <h1>Tasks</h1>
-  <%= link_to 'Create Task', new_account_task_path(@account), class:"btn btn-primary" %>
+  
 </div>
 
 <table class="table">
@@ -22,7 +22,9 @@
       <% if current_user.id == task.user_id %>
       <tr>
         <td><%= task.date %></td>
-        <td><%= task.notes %></td>
+        <td><%= link_to task.notes, task %></td>
+        <td><%= task.contact.name %></td>
+        <td><%= task.account.company_name %></td>
       </tr>
       <% end %>
     <% end %>

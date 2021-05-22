@@ -21,7 +21,7 @@
         <td><%= contact.first_name %></td>
         <td><%= contact.last_name %></td>
         <td><%= contact.email %></td>
-        <td><%= contact.phone %></td>
+        <td><%= number_to_phone(contact.phone, area_code: true, delimiter: "-") %></td>
         <td><%= contact.role %></td>
         <td><%= link_to contact.account.company_name, contact.account %></td>
         <td><%= link_to 'Show', contact %></td>

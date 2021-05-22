@@ -5,7 +5,7 @@
 
         <p><strong>Address: </strong><%= @account.address %></p>
 
-        <p><strong>Phone: </strong><%= @account.phone %></p>
+        <p><strong>Phone: </strong><%= number_to_phone(@account.phone, area_code: true, delimiter: "-") %></p>
         <%= link_to 'Edit', edit_account_path(@account), class:"btn btn-warning" %> 
         <%= link_to 'Back to Accounts', accounts_path, class:"btn btn-info" %> 
         <%= link_to 'Destroy', @account, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -44,8 +44,8 @@
                 <thead>
                     <h3>Contacts</h3>
                         <tr>
-                            <th>First Name: </th>
-                            <th>Last Name: </th>
+                            <th>Name: </th>
+                            
                             <th>Role: </th>
                             <th>Phone: </th>
                             <th>Email: </th>
@@ -55,10 +55,10 @@
                     <tbody>
                         <tr>
                             <% @account.contacts.each do |contact| %>
-                                <td><%= link_to contact.first_name, contact %></td>
-                                <td><%= contact.last_name %></td>
+                                <td><%= link_to contact.name, contact %></td>
+                                
                                 <td><%= contact.role %></td>
-                                <td><%= contact.phone %></td>
+                                <td><%= number_to_phone(contact.phone, area_code: true, delimiter: "-") %></td>
                                 <td><%= contact.email %></td>
                         </tr>
                             <% end %>

@@ -11,6 +11,8 @@ class Contact < ApplicationRecord
         "#{first_name} #{last_name}"
     end 
 
+ 
+
 
 
 
