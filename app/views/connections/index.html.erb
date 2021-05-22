@@ -20,6 +20,7 @@
         <td><%= connection.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
         <td><%= connection.account.company_name %></td>
         <td><%= connection.notes %></td>
+        <td><%= connection.contact&.name %></td>
        
         <td><%= link_to 'Show', connection %></td>
         <td><%= link_to 'Edit', edit_connection_path(connection) %></td>

@@ -1,7 +1,9 @@
 <div class="dash-container">
     <div class="dash-widget-section-container">
         <div class="dash-widget-container dash-tasks">
-            <h4>Tasks</h4>
+            
+            <%= render partial: "tasks/tasks", locals: {tasks: current_user.tasks} %>
+
         </div>
         <div class="dash-widget-container dash-kpis">
             <h4>KPIs</h4>

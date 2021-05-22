@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <h3>Tasks</h3>
+            <tr>
+                <th>Date: </th>
+                <th>Contact: </th>
+                <th>Notes: </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <% tasks.each do |task| %>
+                    <td><%= task.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
+                    <td>
+                        <% if task.contact %>
+                            <%= link_to task.contact.name, contact_path(task.contact) %>
+                        <% end %>
+                    </td>
+                    <td><%= task.date %></td>
+                    <td><%= task.notes %></td>
+            </tr>
+                <% end %>
+        </tbody>
+</table>

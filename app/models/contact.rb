@@ -5,4 +5,13 @@ class Contact < ApplicationRecord
     has_many :account_contacts
     has_many :connections
     has_many :tasks
+
+
+    def name 
+        "#{first_name} #{last_name}"
+    end 
+
+
+
+
 end 

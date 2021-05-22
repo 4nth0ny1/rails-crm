@@ -30,6 +30,11 @@
             <%= form.text_field :opportunity_check, class:"form-control" %>
         </div>
 
+        <div class="field mb-3">
+            <%= form.label :contact_id, class: "form-label" %>
+            <%= form.select :contact_id, connection.account.contacts.map {|contact| ["#{contact.first_name} #{contact.last_name}", contact.id]}, class: "form-control" %>
+        </div>
+
         <div class="actions">
             <%= form.submit %>
         </div>

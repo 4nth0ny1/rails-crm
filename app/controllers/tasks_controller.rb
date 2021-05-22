@@ -6,7 +6,9 @@ class TasksController < ApplicationController
       end 
   
       def new
-          @task = Task.new(account_id: params[:account_id])
+          @task = Task.new
+          account = Account.find(params[:account_id])
+          @contacts = account.contacts
       end
   
       def show 
