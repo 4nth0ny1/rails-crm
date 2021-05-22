@@ -25,8 +25,10 @@ projected income
 signed contracts
 
 Tasks table 
-Date to connect
+Date
 Contact Id
 Notes 
 Account Id 
 
+views dashboard and account page 
+can 

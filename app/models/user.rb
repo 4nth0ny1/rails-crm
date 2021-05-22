@@ -6,6 +6,7 @@ class User < ApplicationRecord
     has_many :opportunities
     has_many :products
     has_many :connections
+    has_many :tasks
 
     scope :catullo, -> { where(last_name: "Catullo") }
     scope :by_first_name, -> { order(first_name: :desc) }
