@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+       
+            <tr>
+                <th>Date Creation </th>
+                <th>Company Name </th>
+                <th>Contact</th>
+               
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <% accounts.each do |account| %>
+                    <td><%= account.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
+                    <td><%= link_to account.company_name, account %></td>
+            </tr>
+                <% end %>
+        </tbody>
+</table>

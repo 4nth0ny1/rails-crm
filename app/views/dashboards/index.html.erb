@@ -54,6 +54,8 @@
             <%= render partial: "opportunities/opportunities", locals: {opportunities: current_user.opportunities.weekly_opps} %>
 
         </div>
+
+
     </div>
 
     <div class="dash-widget-section-container">
@@ -67,6 +69,8 @@
         </div>
         <div class="dash-widget-container dash-accounts">
             <h4>New Accounts</h4>
+            <%= render partial: "accounts/accounts", locals: {accounts: current_user.accounts.weekly_accounts} %>
+
         </div>
     </div>
 
