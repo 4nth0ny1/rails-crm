@@ -17,38 +17,27 @@ class ContactsController < ApplicationController
     end
 
     def create
-          
           @contact = current_user.contacts.build(contact_params)
-          respond_to do |format|
             if @contact.save
-              format.html { redirect_to @contact, notice: "Contact was successfully created." }
-              format.json { render :show, status: :created, location: @contact }
+              redirect_to @contact, notice: "Contact was successfully created." 
             else
-              format.html { render :new, status: :unprocessable_entity }
-              format.json { render json: @contact.errors, status: :unprocessable_entity }
+              render :new, status: :unprocessable_entity 
             end
           end
-        
       end
 
       def update
-        respond_to do |format|
           if @contact.update(contact_params)
-            format.html { redirect_to @contact, notice: "Contact was successfully updated." }
-            format.json { render :show, status: :ok, location: @contact }
+            redirect_to @contact, notice: "Contact was successfully updated." 
           else
-            format.html { render :edit, status: :unprocessable_entity }
-            format.json { render json: @contact.errors, status: :unprocessable_entity }
+            render :edit, status: :unprocessable_entity 
           end
         end
       end
 
       def destroy
         @contact.destroy
-        respond_to do |format|
-          format.html { redirect_to contacts_url, notice: "Contact was successfully destroyed." }
-          format.json { head :no_content }
-        end
+        redirect_to contacts_url, notice: "Contact was successfully destroyed." 
       end
 
 
