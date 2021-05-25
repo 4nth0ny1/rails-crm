@@ -32,23 +32,16 @@ class ConnectionsController < ApplicationController
       end
 
       def update
-        respond_to do |format|
           if @connection.update(connection_params)
-            format.html { redirect_to @connection, notice: "Connection was successfully updated." }
-            format.json { render :show, status: :ok, location: @connection }
+            redirect_to @connection, notice: "Connection was successfully updated." 
           else
-            format.html { render :edit, status: :unprocessable_entity }
-            format.json { render json: @connection.errors, status: :unprocessable_entity }
+            render :edit, status: :unprocessable_entity 
           end
-        end
       end
 
       def destroy
         @connection.destroy
-        respond_to do |format|
-          format.html { redirect_to connections_url, notice: "Connection was successfully destroyed." }
-          format.json { head :no_content }
-        end
+        redirect_to connections_url, notice: "Connection was successfully destroyed." 
       end
 
 
