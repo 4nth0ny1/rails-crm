@@ -14,6 +14,9 @@
                 <% accounts.each do |account| %>
                     <td><%= account.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
                     <td><%= link_to account.company_name, account %></td>
+                    <% account.contacts.each do |contact| %>
+                        <td><%= contact.name%></td>
+                    <% end %>
             </tr>
                 <% end %>
         </tbody>
