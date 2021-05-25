@@ -23,7 +23,6 @@ class ContactsController < ApplicationController
             else
               render :new, status: :unprocessable_entity 
             end
-          end
       end
 
       def update
@@ -32,7 +31,6 @@ class ContactsController < ApplicationController
           else
             render :edit, status: :unprocessable_entity 
           end
-        end
       end
 
       def destroy

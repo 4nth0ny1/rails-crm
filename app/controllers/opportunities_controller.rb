@@ -16,39 +16,25 @@ class OpportunitiesController < ApplicationController
     end
 
     def create
-  
           @opportunity = current_user.opportunities.build(opportunity_params)
-      
-          respond_to do |format|
             if @opportunity.save
-              format.html { redirect_to @opportunity, notice: "Opportunity was successfully created." }
-              format.json { render :show, status: :created, location: @opportunity }
+              redirect_to @opportunity, notice: "Opportunity was successfully created." 
             else
-              format.html { render :new, status: :unprocessable_entity }
-              format.json { render json: @opportunity.errors, status: :unprocessable_entity }
+              render :new, status: :unprocessable_entity 
             end
-          end
-        
       end
 
       def update
-        respond_to do |format|
           if @opportunity.update(opportunity_params)
-            format.html { redirect_to @opportunity, notice: "Opportunity was successfully updated." }
-            format.json { render :show, status: :ok, location: @opportunity }
+            redirect_to @opportunity, notice: "Opportunity was successfully updated." 
           else
-            format.html { render :edit, status: :unprocessable_entity }
-            format.json { render json: @opportunity.errors, status: :unprocessable_entity }
+            render :edit, status: :unprocessable_entity 
           end
-        end
       end
 
       def destroy
         @opportunity.destroy
-        respond_to do |format|
-          format.html { redirect_to opportunities_url, notice: "Opportunity was successfully destroyed." }
-          format.json { head :no_content }
-        end
+        redirect_to opportunities_url, notice: "Opportunity was successfully destroyed." 
       end
 
 
