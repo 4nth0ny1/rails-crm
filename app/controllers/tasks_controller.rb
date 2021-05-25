@@ -18,39 +18,25 @@ class TasksController < ApplicationController
       end
   
       def create
-    
             @task = current_user.tasks.build(task_params)
-        
-            respond_to do |format|
               if @task.save
-                format.html { redirect_to @task, notice: "Task was successfully created." }
-                format.json { render :show, status: :created, location: @task }
+                redirect_to @task, notice: "Task was successfully created." 
               else
-                format.html { render :new, status: :unprocessable_entity }
-                format.json { render json: @task.errors, status: :unprocessable_entity }
+                render :new, status: :unprocessable_entity 
               end
-            end
-          
-        end
+      end
   
         def update
-          respond_to do |format|
             if @task.update(task_params)
-              format.html { redirect_to @task, notice: "Task was successfully updated." }
-              format.json { render :show, status: :ok, location: @task }
+              redirect_to @task, notice: "Task was successfully updated." 
             else
-              format.html { render :edit, status: :unprocessable_entity }
-              format.json { render json: @task.errors, status: :unprocessable_entity }
+              render :edit, status: :unprocessable_entity 
             end
-          end
         end
   
         def destroy
           @task.destroy
-          respond_to do |format|
-            format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
-            format.json { head :no_content }
-          end
+          redirect_to tasks_url, notice: "Task was successfully destroyed." 
         end
   
   
