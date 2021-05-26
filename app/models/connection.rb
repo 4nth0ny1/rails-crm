@@ -4,6 +4,7 @@ class Connection < ApplicationRecord
     belongs_to :product, required: false
     belongs_to :contact, required: false
     belongs_to :opportunity, required: false
+    validates: :connection_type, presence: true
 
     scope :by_date, -> { order(created_at: :desc) }
    
