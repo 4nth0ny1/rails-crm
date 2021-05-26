@@ -10,7 +10,6 @@ class Contact < ApplicationRecord
     validates :last_name, presence: true
     validates :email, presence: true, length: { maximum: 100 }
    
-
     def name 
         "#{first_name} #{last_name}"
     end 
