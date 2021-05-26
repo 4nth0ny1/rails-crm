@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :accounts do 
-      resources :contacts, only: [:new]
+      resources :contacts, only: [:new, :index]
       resources :opportunities, only: [:new]
       resources :connections, only: [:new]
       resources :tasks, only: [:new]

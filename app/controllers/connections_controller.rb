@@ -2,7 +2,7 @@ class ConnectionsController < ApplicationController
     before_action :set_connection, only: %i[ show edit update destroy ]
 
     def index
-        @connections = Connection.by_date
+        @connections = current_user.connections.by_date
     end 
 
     def new

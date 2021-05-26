@@ -1,8 +1,5 @@
 <div class="form-container">
  <%= form_with(model: task) do |form| %>
-   
-   
-
       <% if task.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -29,8 +26,9 @@
             <div class="field mb-3">
                 <%= form.label :contact_id, class: "form-label" %>
                 <%= form.select :contact_id, @contacts.map {|contact| ["#{contact.first_name} #{contact.last_name}", contact.id]}, class: "form-control" %>
+                
             </div>
-
+           
           <div class="actions">
                 <%= form.submit %>
           </div>

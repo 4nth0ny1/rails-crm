@@ -2,7 +2,7 @@ class OpportunitiesController < ApplicationController
     before_action :set_opportunity, only: %i[ show edit update destroy ]
 
     def index
-        @opportunities = Opportunity.all
+        @opportunities = current_user.opportunities
     end 
 
     def new

@@ -7,4 +7,6 @@ class Account < ApplicationRecord
 
     scope :weekly_accounts, -> { where(created_at: Time.current.beginning_of_week..Time.current) }
 
+    scope :daily_accts, -> { where(created_at: Time.current.beginning_of_day..Time.current) }
+
 end

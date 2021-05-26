@@ -6,4 +6,6 @@ class Opportunity < ApplicationRecord
     has_many :connections
 
     scope :weekly_opps, -> { where(created_at: Time.current.beginning_of_week..Time.current) }
+
+    scope :daily_opps, -> { where(created_at: Time.current.beginning_of_day..Time.current) }
 end

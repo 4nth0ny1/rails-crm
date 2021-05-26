@@ -2,9 +2,10 @@ class TasksController < ApplicationController
     before_action :set_task, only: %i[ show edit update destroy ]
   
       def index
-          @tasks = Task.all
+          @tasks = current_user.tasks
       end 
   
+      # /accounts/4/tasks/new
       def new
           @task = Task.new
           account = Account.find(params[:account_id])
@@ -14,7 +15,9 @@ class TasksController < ApplicationController
       def show 
       end 
   
+      #/tasks/5/edit
       def edit 
+        @contacts = @task.account.contacts
       end
   
       def create

@@ -18,7 +18,10 @@
                         <td><%= link_to task.contact.name, contact_path(task.contact) %></td>
                     <% end %>
                     <td><%= task.notes %></td>
+                    <td><%= link_to "Show", task_path(task) %></td>
             </tr>
                 <% end %>
+                
         </tbody>
 </table>
+

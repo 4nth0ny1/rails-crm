@@ -2,7 +2,12 @@ class ContactsController < ApplicationController
     before_action :set_contact, only: %i[ show edit update destroy ]
 
     def index
-        @contacts = Contact.all
+      if params[:account_id]
+        account = Account.find(params[:account_id])
+        @contacts = current_user.contacts.where(account: account)
+      else
+        @contacts = current_user.contacts
+      end 
     end 
 
     def new
@@ -14,6 +19,7 @@ class ContactsController < ApplicationController
     end 
 
     def edit 
+    
     end
 
     def create
