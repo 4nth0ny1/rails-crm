@@ -3,6 +3,6 @@ class Task < ApplicationRecord
     belongs_to :contact
     has_one :account, through: :contact
 
-    validates :date, presence: true
-    validates :notes, presence: true
+    validates :date, :notes, presence: true
+   
 end 
