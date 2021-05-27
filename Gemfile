@@ -27,10 +27,6 @@ gem "omniauth-rails_csrf_protection"
 gem "font-awesome-sass"
 gem 'active_link_to'
 
-
-
-gem 'omniauth-github'
-
 gem 'dotenv-rails'
 
 # Use Active Storage variant
