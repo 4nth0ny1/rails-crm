@@ -18,6 +18,7 @@
                 <h3>Connections</h3>
                     <tr>
                         <th>Date</th>
+                        <th>Time</th>
                         <th>Connection Type</th>
                         <th>Notes</th>
                         <th>Opportunity Check</th>
@@ -26,10 +27,12 @@
                 <tbody>
                     <tr>
                         <% @account.connections.each do |connection| %>
-                            <td><%= link_to connection.created_at.strftime("%I:%M%p on %m/%d/%Y"), connection %></td>
+                            <td><%= connection.created_at.strftime("%m/%d/%Y") %></td>
+                            <td><%= connection.created_at.strftime("%I:%M%p") %></td>
                             <td><%= connection.connection_type %></td>
                             <td><%= connection.notes %></td>
                             <td><%= connection.opportunity_check %></td>
+                            <td><%= link_to "Show", connection %></td>
                     </tr>
                         <% end %>
                     
@@ -55,11 +58,13 @@
                     <tbody>
                         <tr>
                             <% @account.contacts.each do |contact| %>
-                                <td><%= link_to contact.name, contact %></td>
+                                <td><%= contact.name %></td>
                                 
                                 <td><%= contact.role %></td>
                                 <td><%= number_to_phone(contact.phone, area_code: true, delimiter: "-") %></td>
                                 <td><%= contact.email %></td>
+                                <td><%= link_to "Show", contact %></td>
+
                         </tr>
                             <% end %>
                         
