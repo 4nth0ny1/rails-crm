@@ -16,26 +16,27 @@ class ConnectionsController < ApplicationController
     end
 
     def create
-          
-          @connection = current_user.connections.build(connection_params)
-            if @connection.save
-              if @connection.opportunity_check 
-                current_user.opportunities.create(product: @connection.product, contact: @connection.contact, account: @connection.account)
-                redirect_to @connection.account
-              else
-                redirect_to @connection, notice: "Connection was successfully created."
-              end
-            else
-              render :new, status: :unprocessable_entity 
-            end
-        
+      @connection = current_user.connections.build(connection_params)
+        if @connection.save
+          if @connection.opportunity_check 
+            current_user.opportunities.create(product: @connection.product, contact: @connection.contact, account: @connection.account)
+            redirect_to @connection.account
+          else
+            redirect_to @connection, notice: "Connection was successfully created."
+          end
+        else
+          render :new
+        end
       end
 
       def update
           if @connection.update(connection_params)
-            redirect_to @connection, notice: "Connection was successfully updated." 
+            if connection_params["opportunity_check"]
+              current_user.opportunities.create(product: @connection.product, contact: @connection.contact, account: @connection.account)
+              redirect_to @connection, notice: "Connection was successfully updated." 
+            end
           else
-            render :edit, status: :unprocessable_entity 
+            render :edit
           end
       end
 
@@ -46,12 +47,10 @@ class ConnectionsController < ApplicationController
 
 
       private
-      # Use callbacks to share common setup or constraints between actions.
       def set_connection
           @connection = Connection.find(params[:id])
       end
   
-      # Only allow a list of trusted parameters through.
       def connection_params
         params.require(:connection).permit(:user_id, :contact_id, :product_id, :opportunity_id, :account_id, :notes, :connection_type, :opportunity_check)
       end

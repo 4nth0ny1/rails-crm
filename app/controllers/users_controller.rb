@@ -20,7 +20,7 @@ class UsersController < ApplicationController
           if @user.save
             redirect_to @user, notice: "User was successfully created." 
           else
-            render :new, status: :unprocessable_entity 
+            render :new
           end
       end
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
           if @user.update(user_params)
             redirect_to @user, notice: "User was successfully updated." 
           else
-            render :edit, status: :unprocessable_entity
+            render :edit
           end
       end
 
@@ -39,12 +39,10 @@ class UsersController < ApplicationController
 
 
       private
-      # Use callbacks to share common setup or constraints between actions.
       def set_user
         @user = User.find(params[:id])
       end
   
-      # Only allow a list of trusted parameters through.
       def user_params
         params.require(:user).permit(:first_name, :last_name, :role, :email, :password, :password_confirmation)
       end

@@ -20,7 +20,7 @@ class AccountsController < ApplicationController
             if @account.save
               redirect_to @account, notice: "Account was successfully created."
             else
-              render :new, status: :unprocessable_entity
+              render :new
             end
       end
 
@@ -28,7 +28,7 @@ class AccountsController < ApplicationController
           if @account.update(account_params)
             redirect_to @account, notice: "Account was successfully updated." 
           else
-            render :edit, status: :unprocessable_entity             
+            render :edit        
           end
       end
 
@@ -39,12 +39,10 @@ class AccountsController < ApplicationController
 
 
       private
-      # Use callbacks to share common setup or constraints between actions.
       def set_account
           @account = Account.find(params[:id])
       end
   
-      # Only allow a list of trusted parameters through.
       def account_params
         params.require(:account).permit(:company_name, :address, :phone)
       end

@@ -20,7 +20,7 @@ class OpportunitiesController < ApplicationController
             if @opportunity.save
               redirect_to @opportunity, notice: "Opportunity was successfully created." 
             else
-              render :new, status: :unprocessable_entity 
+              render :new
             end
       end
 
@@ -28,7 +28,7 @@ class OpportunitiesController < ApplicationController
           if @opportunity.update(opportunity_params)
             redirect_to @opportunity, notice: "Opportunity was successfully updated." 
           else
-            render :edit, status: :unprocessable_entity 
+            render :edit
           end
       end
 
@@ -39,12 +39,10 @@ class OpportunitiesController < ApplicationController
 
 
       private
-      # Use callbacks to share common setup or constraints between actions.
       def set_opportunity
           @opportunity = Opportunity.find(params[:id])
       end
   
-      # Only allow a list of trusted parameters through.
       def opportunity_params
         params.require(:opportunity).permit(:account_id, :product_id, :contact_id, :user_id)
       end

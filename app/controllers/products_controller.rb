@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
               if @product.save
                 redirect_to @product, notice: "Product was successfully created." 
               else
-                render :new, status: :unprocessable_entity 
+                render :new
               end
         end
   
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
             if @product.update(product_params)
               redirect_to @product, notice: "Product was successfully updated." 
             else
-              render :edit, status: :unprocessable_entity 
+              render :edit
             end
         end
   
@@ -39,12 +39,10 @@ class ProductsController < ApplicationController
   
   
         private
-        # Use callbacks to share common setup or constraints between actions.
         def set_product
             @product = Product.find(params[:id])
         end
     
-        # Only allow a list of trusted parameters through.
         def product_params
           params.require(:product).permit(:name, :description, :price, :user_id)
         end

@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
             if @contact.save
               redirect_to @contact, notice: "Contact was successfully created." 
             else
-              render :new, status: :unprocessable_entity 
+              render :new
             end
       end
 
@@ -35,7 +35,7 @@ class ContactsController < ApplicationController
           if @contact.update(contact_params)
             redirect_to @contact, notice: "Contact was successfully updated." 
           else
-            render :edit, status: :unprocessable_entity 
+            render :edit
           end
       end
 
@@ -46,12 +46,10 @@ class ContactsController < ApplicationController
 
 
       private
-      # Use callbacks to share common setup or constraints between actions.
       def set_contact
           @contact = Contact.find(params[:id])
       end
   
-      # Only allow a list of trusted parameters through.
       def contact_params
         params.require(:contact).permit(:first_name, :last_name, :phone, :email, :role, :account_id, :connection_id, :user_id)
       end

@@ -5,7 +5,7 @@ class TasksController < ApplicationController
           @tasks = current_user.tasks
       end 
   
-      # /accounts/4/tasks/new
+     
       def new
           @task = Task.new
           account = Account.find(params[:account_id])
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
       def show 
       end 
   
-      #/tasks/5/edit
+      
       def edit 
         @contacts = @task.account.contacts
       end
@@ -25,7 +25,7 @@ class TasksController < ApplicationController
               if @task.save
                 redirect_to @task, notice: "Task was successfully created." 
               else
-                render :new, status: :unprocessable_entity 
+                render :new
               end
       end
   
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
             if @task.update(task_params)
               redirect_to @task, notice: "Task was successfully updated." 
             else
-              render :edit, status: :unprocessable_entity 
+              render :edit
             end
         end
   
@@ -44,12 +44,10 @@ class TasksController < ApplicationController
   
   
         private
-        # Use callbacks to share common setup or constraints between actions.
         def set_task
             @task = Task.find(params[:id])
         end
     
-        # Only allow a list of trusted parameters through.
         def task_params
           params.require(:task).permit(:date, :notes, :account_id, :contact_id, :user_id)
         end

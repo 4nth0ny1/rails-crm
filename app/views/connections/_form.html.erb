@@ -31,7 +31,7 @@
             <%= form.select :product_id, Product.all.map {|product| ["#{product.name} - #{number_to_currency(product.price)}", product.id]}, class: "form-control" %>
         </div>
 
-        <% if connection.account.contacts.present? %>
+        <% if connection.account.contacts.present? && connection.opportunity_check == false %>
           <div class="field mb-3">
               <%= form.label :opportunity_check, class: "form-label"  %>
               <%= form.check_box :opportunity_check%>

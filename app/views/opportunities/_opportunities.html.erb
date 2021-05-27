@@ -12,7 +12,7 @@
         <tbody>
             <tr>
                 <% opportunities.each do |opportunity| %>
-                    <td><%= opportunity.created_at.strftime("%m/%d/%Y") %></td>
+                    <td><%= opportunity.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
                     <td><%= link_to opportunity.product.name, opportunity.product %></td>
                     <td>
                         <% if opportunity.contact%>
