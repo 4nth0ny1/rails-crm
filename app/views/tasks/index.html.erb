@@ -24,8 +24,8 @@
       <tr>
         <td><%= task.date %></td>
         <td><%= link_to task.notes, task %></td>
-        <td><%= task.contact.name %></td>
-        <td><%= task.account.company_name %></td>
+        <td><%= link_to task.contact.name, task.contact %></td>
+        <td><%= link_to task.account.company_name, task.account %></td>
       </tr>
       <% end %>
     <% end %>
