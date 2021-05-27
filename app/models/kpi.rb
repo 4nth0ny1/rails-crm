@@ -12,7 +12,7 @@ class Kpi
     end 
   
     def self.accts(user)
-        user.accounts.daily_accts.count/40.0 * 100
+        user.accounts.daily_accts.count/5.0 * 100
     end    
 
 end 
