@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_163055) do
+ActiveRecord::Schema.define(version: 2021_05_27_222756) do
 
   create_table "accounts", force: :cascade do |t|
-    t.string "company_name"
-    t.string "address"
-    t.string "phone"
+    t.string "company_name", null: false
+    t.string "address", null: false
+    t.string "phone", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 2021_05_22_163055) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone"
-    t.string "email"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "phone", null: false
+    t.string "email", null: false
     t.string "role"
     t.integer "account_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -84,9 +84,9 @@ ActiveRecord::Schema.define(version: 2021_05_22_163055) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.decimal "price"
+    t.string "name", null: false
+    t.string "description", null: false
+    t.decimal "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
@@ -94,8 +94,8 @@ ActiveRecord::Schema.define(version: 2021_05_22_163055) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "date"
-    t.text "notes"
+    t.string "date", null: false
+    t.text "notes", null: false
     t.integer "contact_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -105,15 +105,15 @@ ActiveRecord::Schema.define(version: 2021_05_22_163055) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
+    t.string "email", null: false
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "google_token"
-    t.string "google_refresh_token"
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "role"
+    t.string "google_refresh_token"
+    t.string "google_token"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

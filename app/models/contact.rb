@@ -6,7 +6,7 @@ class Contact < ApplicationRecord
     has_many :connections
     has_many :tasks
 
-    validates :first_name, :last_name, presence: true
+    validates :first_name, :last_name, :phone, presence: true
     validates :email, presence: true, length: { maximum: 100 }
    
     def name 
