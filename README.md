@@ -1,3 +1,5 @@
+Rails CRM is a simple take on modern CRMs without. This CRM allows you to create accounts and keep up with them by creating tasks, documenting opportunities, and monitoring them with a dashboard that makes it possible to hit your goals and get paid!
+
 
 **secondary tasks
 
