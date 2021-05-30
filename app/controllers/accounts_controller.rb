@@ -22,6 +22,7 @@ class AccountsController < ApplicationController
           @account = current_user.accounts.build(account_params)
             if @account.save
               redirect_to @account, notice: "Account was successfully created."
+              # redirect_to account_path(@account.id)
             else
               render :new
             end

@@ -21,6 +21,7 @@ class ConnectionsController < ApplicationController
           if @connection.opportunity_check 
             current_user.opportunities.create(product: @connection.product, contact: @connection.contact, account: @connection.account)
             redirect_to @connection.account
+            # redirect_to account_path(@connection.account.id)
           else
             redirect_to @connection, notice: "Connection was successfully created."
           end

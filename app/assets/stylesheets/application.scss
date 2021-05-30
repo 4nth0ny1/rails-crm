@@ -19,7 +19,6 @@
 
  body {
     background: #f8f8ff;
-
  }
 
  .form-container {
@@ -27,7 +26,7 @@
     margin: 0 auto;
  }
 
- .navbar {    
+ .navbar, .footer {    
    background: rgb(13,110,253);
    background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(3,158,189,1) 100%);
  }
