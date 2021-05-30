@@ -12,7 +12,9 @@ class User < ApplicationRecord
     has_many :tasks
 
    
-
+    def name 
+      "#{first_name} #{last_name}"
+    end 
   
     scope :by_first_name, -> { order('lower(first_name)') }
 

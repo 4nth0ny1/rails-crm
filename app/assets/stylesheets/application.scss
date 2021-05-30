@@ -19,16 +19,25 @@
 
  body {
     background: #f8f8ff;
+    
  }
 
  .form-container {
     max-width: 980px;
     margin: 0 auto;
+    margin-bottom: 100px;
+    min-height: 500px;
  }
 
  .navbar, .footer {    
    background: rgb(13,110,253);
    background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(3,158,189,1) 100%);
+ }
+
+ .footer {
+    margin-top: 100px;
+    bottom: 0;
+    width: 100%;    
  }
 
  .btn {
