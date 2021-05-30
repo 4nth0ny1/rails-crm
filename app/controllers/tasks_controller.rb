@@ -7,9 +7,14 @@ class TasksController < ApplicationController
   
      
       def new
+   
           @task = Task.new
           account = Account.find(params[:account_id])
           @contacts = account.contacts
+
+          if @contacts.empty?
+            redirect_to account, notice: "To create a task you need to have a contact." 
+          end 
       end
   
       def show 
