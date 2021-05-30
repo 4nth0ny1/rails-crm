@@ -1,3 +1,24 @@
+why are we using class methods for kpi, instance method for contact -- name method, and scope methods for everything else. Why couldnt' we have just done an instance method for all of them? 
+
+
+
+<% if current_user.id == account.user_id %>  why do we need this for the account index list, but not any of the other ones? 
+
+
+
+.build vs .new 
+does .build create a parent_id. i've read that it used to be necessary in earlier versions of rails for has_many/belongs_to associations, but is not the case anymore and new does the same thing. 
+
+
+should the accounts_controller have a user_id in the account params method. in what situations would i need to have this there? 
+
+
+
+
+
+
+
+
 1. can't change color of button text/can't remove text-decoration with bootstrap or unique css
 2. many of the functions of the create pages are not creating objects 
 3. connections db (what should be in there)

@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Date</th>
+      <th>Time</th>
       <th>Account</th>
       <th>Notes</th>
      
@@ -17,7 +18,8 @@
   <tbody>
     <% @connections.each do |connection| %>
       <tr>
-        <td><%= connection.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
+        <td><%= connection.created_at.strftime("%m/%d/%Y") %></td>
+        <td><%= connection.created_at.strftime("%I:%M%p") %></td>
         <td><%= connection.account.company_name %></td>
         <td><%= connection.notes %></td>
         <td><%= connection.contact&.name %></td>

@@ -11,8 +11,11 @@ class User < ApplicationRecord
     has_many :connections
     has_many :tasks
 
-    scope :catullo, -> { where(last_name: "Catullo") }
-    scope :by_first_name, -> { order(first_name: :desc) }
+   
+
+  
+    scope :by_first_name, -> { order('lower(first_name)') }
+
 
     def self.from_omniauth(auth)
    

@@ -83,7 +83,11 @@
 
         <div class="connections-show">
             <%= render partial: "tasks/tasks", locals: {tasks: @account.tasks} %>
-            <%= link_to 'Add Task', new_account_task_path(@account) %> 
+            <% if @account.contacts.empty? %>
+                <code>You need to create a contact in order to create a task.</code>
+            <% else %> 
+                <%= link_to 'Add Task', new_account_task_path(@account) %> 
+            <% end %>
         </div>
   
 </div>
