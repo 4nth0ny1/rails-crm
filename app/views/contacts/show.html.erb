@@ -3,7 +3,7 @@
   <div class="home-container">
 
 
-    <p><strong><%= @contact.first_name %> <%= @contact.last_name %>, <%= @contact.role %></strong></p>
+    <p><strong><%= @contact.name %>, <%= @contact.role %></strong></p>
     <p><%= link_to @contact.account.company_name, @contact.account %></p>
     <p><strong>Phone: </strong><%= number_to_phone(@contact.phone, area_code: true, delimiter: "-") %></p>
     <p><strong>Email: </strong><%= @contact.email %></p>
@@ -13,3 +13,4 @@
     <%= link_to 'Back', @contact.account, class:"btn btn-info" %>
     </div>
 </div>
+

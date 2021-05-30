@@ -10,6 +10,9 @@ class AccountsController < ApplicationController
     end
 
     def show 
+      if @account.user != current_user
+        redirect_to accounts_path
+      end 
     end 
 
     def edit 

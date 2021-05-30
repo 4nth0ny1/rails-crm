@@ -7,6 +7,10 @@ class OpportunitiesController < ApplicationController
 
     def new
         @opportunity = Opportunity.new(account_id: params[:account_id])
+      
+        if @opportunity.account.contacts.empty?
+          redirect_to @opportunity.account, notice: "To create a opportunity you need to have a contact." 
+        end 
     end
 
     def show 
