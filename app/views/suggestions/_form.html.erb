@@ -1,0 +1,34 @@
+<div class="form-container">
+  <%= form_with(model: suggestion) do |form| %>
+
+  <% if suggestion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
+
+      <ul>
+        <% suggestion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   
+        <div class="field mb-3">
+            <label class="form-label"><%= form.label :title %></label>
+            <div class="form-control"><%= form.text_field :title %></div>
+        </div>
+
+        <div class="field mb-3">
+            <label class="form-label"><%= form.label :description %></label>
+            <div class="form-control"><%= form.text_field :description %></div>
+        </div>
+
+        <div class="actions">
+            <%= form.submit %>
+        </div>
+
+        <% end %>
+ 
+
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_222756) do
+ActiveRecord::Schema.define(version: 2021_05_31_021515) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "company_name", null: false
@@ -93,6 +93,15 @@ ActiveRecord::Schema.define(version: 2021_05_27_222756) do
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
+  create_table "suggestions", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_suggestions_on_user_id"
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "date", null: false
     t.text "notes", null: false
@@ -131,6 +140,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_222756) do
   add_foreign_key "opportunities", "products"
   add_foreign_key "opportunities", "users"
   add_foreign_key "products", "users"
+  add_foreign_key "suggestions", "users"
   add_foreign_key "tasks", "contacts"
   add_foreign_key "tasks", "users"
 end

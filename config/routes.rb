@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :connections, except: [:new]
   resources :products
   resources :dashboards
+  resources :suggestions
   resources :tasks, except: [:new]
   resources :sessions, only: [:new, :create, :destroy]
 

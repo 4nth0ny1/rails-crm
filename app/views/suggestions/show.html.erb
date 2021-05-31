@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<div class="show-container">
+  <div class="home-container">
+        
+        <h2><strong>Title: </strong><%= @suggestion.title %></h2>
+        
+        <p><strong>Description: </strong><%= @suggestion.description %></p>
+
+    
+        <%= link_to 'Edit', edit_suggestion_path(@suggestion), class:"btn btn-warning" %> 
+        <%= link_to 'Destroy', @suggestion, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
+</div>

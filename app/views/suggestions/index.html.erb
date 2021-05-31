@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="head-container">
+  <h1>Suggestions</h1>
+  <%= link_to 'Create Suggestion', new_suggestion_path, class:"btn btn-primary" %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+     
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suggestions.each do |suggestion| %>
+      <tr>
+        <td><%= link_to suggestion.title, suggestion %></td>
+        <td><%= suggestion.description %></td>
+       
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
