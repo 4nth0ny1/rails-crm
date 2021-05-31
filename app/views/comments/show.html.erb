@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="show-container">
+  <div class="home-container">
+        
+        <h2><strong><%= @comment.title %></strong></h2>
+        
+        <p><strong>Description: </strong><%= @comment.description %></p>
+
+        <%= link_to 'Edit', edit_comment_path(@comment), class:"btn btn-warning" %> 
+        <%= link_to 'Destroy', @comment, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
+</div>

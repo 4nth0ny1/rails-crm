@@ -11,6 +11,7 @@ class User < ApplicationRecord
     has_many :connections
     has_many :tasks
     has_many :suggestions
+    has_many :comments
 
    
     def name 
