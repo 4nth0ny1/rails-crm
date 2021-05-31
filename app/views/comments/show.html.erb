@@ -6,9 +6,10 @@
         <h2><strong><%= @comment.title %></strong></h2>
         
         <p><strong>Description: </strong><%= @comment.description %></p>
-
+      <% if current_user == @comment.user %>
         <%= link_to 'Edit', edit_comment_path(@comment), class:"btn btn-warning" %> 
         <%= link_to 'Destroy', @comment, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+       <% end %>
     </div>
 
 </div>

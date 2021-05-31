@@ -38,10 +38,10 @@
                   <% @product.comments.each do |comment| %>
                     <tr>
                       <td><%= comment.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
-                      <td><%= link_to comment.title, comment %></td>
+                      <td><%= comment.title %></td>
                       <td><%= comment.description %></td>
                       <td><%= comment.user.name %></td>
-                      <td><%= link_to 'Show', comment_path %></td>
+                      <td><%= link_to 'Show', comment %></td>
                     </tr>
                   <% end %>
                 </tbody>
