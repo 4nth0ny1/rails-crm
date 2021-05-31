@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#googleAuth'
   get 'auth/failure', to: redirect('/')
   
-  resources :users
+  resources :users do 
+      resources :suggestions, only: [:new]
+  end 
   resources :accounts do 
       resources :contacts, only: [:new, :index]
       resources :opportunities, only: [:new]
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
   resources :connections, except: [:new]
   resources :products
   resources :dashboards
-  resources :suggestions
+  resources :suggestions, except: [:new]
   resources :tasks, except: [:new]
   resources :sessions, only: [:new, :create, :destroy]
 
