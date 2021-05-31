@@ -8,6 +8,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Date</th>
       <th>Title</th>
       <th>Description</th>
      
@@ -18,8 +19,10 @@
   <tbody>
     <% @suggestions.each do |suggestion| %>
       <tr>
-        <td><%= link_to suggestion.title, suggestion %></td>
+        <td><%= suggestion.created_at.strftime("%m/%d/%Y")%></td>
+        <td><%= suggestion.title %></td>
         <td><%= suggestion.description %></td>
+        <td><%= link_to "Show", suggestion %></td>
        
 
       </tr>
