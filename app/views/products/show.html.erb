@@ -37,11 +37,12 @@
                 <tbody>
                   <% @product.comments.each do |comment| %>
                     <tr>
-                      <td><%= comment.created_at.strftime("%I:%M%p on %m/%d/%Y") %></td>
+                      <td><%= comment.created_at.strftime("%m/%d/%Y @ %I:%M%p") %></td>
                       <td><%= comment.title %></td>
                       <td><%= comment.description %></td>
                       <td><%= comment.user.name %></td>
                       <td><%= link_to 'Show', comment %></td>
+                      <td><%= link_to 'Reply', new_comment_reply_path(@comment) %></td>
                     </tr>
                   <% end %>
                 </tbody>

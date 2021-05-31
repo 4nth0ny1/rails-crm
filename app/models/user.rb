@@ -12,8 +12,8 @@ class User < ApplicationRecord
     has_many :tasks
     has_many :suggestions
     has_many :comments
+    has_many :replies
 
-   
     def name 
       "#{first_name} #{last_name}"
     end 

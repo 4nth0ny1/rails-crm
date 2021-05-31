@@ -16,11 +16,17 @@ Rails.application.routes.draw do
   resources :contacts, except: [:new]
   resources :opportunities, except: [:new]
   resources :connections, except: [:new]
+  resources :dashboards
+
   resources :products do 
     resources :comments, only: [:new]
   end 
-  resources :dashboards
-  resources :comments, except: [:new]
+  
+  resources :comments, except: [:new] do
+    resources :replies, only: [:new]
+  end 
+  
+  resources :replies, expect: [:new]
   resources :suggestions, except: [:new]
   resources :tasks, except: [:new]
   resources :sessions, only: [:new, :create, :destroy]

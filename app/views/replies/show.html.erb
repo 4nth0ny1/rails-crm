@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="show-container">
+  <div class="home-container">
+        
+        <h2><strong><%= @reply.reply %></strong></h2>
+        
+     
+        <%= link_to 'Edit', edit_reply_path(@reply), class:"btn btn-warning" %> 
+        <%= link_to 'Destroy', @reply, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+     
+    </div>
+
+</div>

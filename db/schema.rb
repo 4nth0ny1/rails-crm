@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_173656) do
+ActiveRecord::Schema.define(version: 2021_05_31_195948) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "company_name", null: false
@@ -104,6 +104,16 @@ ActiveRecord::Schema.define(version: 2021_05_31_173656) do
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
+  create_table "replies", force: :cascade do |t|
+    t.string "reply", null: false
+    t.integer "comment_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_replies_on_comment_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
+  end
+
   create_table "suggestions", force: :cascade do |t|
     t.string "title", null: false
     t.string "description", null: false
@@ -153,6 +163,8 @@ ActiveRecord::Schema.define(version: 2021_05_31_173656) do
   add_foreign_key "opportunities", "products"
   add_foreign_key "opportunities", "users"
   add_foreign_key "products", "users"
+  add_foreign_key "replies", "comments"
+  add_foreign_key "replies", "users"
   add_foreign_key "suggestions", "users"
   add_foreign_key "tasks", "contacts"
   add_foreign_key "tasks", "users"
