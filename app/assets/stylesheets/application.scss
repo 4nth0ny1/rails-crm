@@ -66,6 +66,16 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
  }
 
+ .comment-container {
+   background: #f8f8ff;
+   max-width: 750px;
+   padding: 50px;
+   margin: 50px auto;
+   border-radius: 15px;
+   text-align: center;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+ }
+
  .head-container {
    display: flex;
    justify-content: space-between;

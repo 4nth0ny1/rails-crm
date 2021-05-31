@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="head-container">
-  <h1>Comments</h1>
+  <h1>My Comments</h1>
 </div>
 
 <table class="table">
@@ -17,8 +17,10 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= link_to comment.title, comment %></td>
+        <td><%= comment.created_at.strftime("%m/%d/%Y @ %I:%M%p") %></td>
+        <td><%= comment.title %></td>
         <td><%= comment.description %></td>
+        <td><%= link_to "Show", comment %></td>
   
 
       </tr>
