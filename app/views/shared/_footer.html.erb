@@ -44,10 +44,10 @@
           <h6 class="text-uppercase fw-bold mb-4">
             Products
           </h6>
-          <%= active_link_to "iPhone XX", "products/1", class:"nav-link text-white" %>
-          <%= active_link_to "Asus Computer", "products/2", class:"nav-link text-white" %>
-          <%= active_link_to "Electronic Candles", "products/3", class:"nav-link text-white" %>
-          <%= active_link_to "Coffee Cups", "products/4", class:"nav-link text-white" %>
+          <%= active_link_to "iPhone XX", product_path(Product.first), class:"nav-link text-white" %>
+          <%= active_link_to "Asus Computer", product_path(Product.second), class:"nav-link text-white" %>
+          <%= active_link_to "Electronic Candles", product_path(Product.third), class:"nav-link text-white" %>
+          <%= active_link_to "Coffee Cups", product_path(Product.fourth), class:"nav-link text-white" %>
         </div>
         <!-- Grid column -->
 
@@ -94,6 +94,8 @@
     <a class="text-reset text-white fw-bold" href="http://127.0.0.1:3000">Rails CRM</a>
     
   </div>
+
+  
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
