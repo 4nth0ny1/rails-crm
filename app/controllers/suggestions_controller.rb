@@ -2,12 +2,7 @@ class SuggestionsController < ApplicationController
     before_action :set_suggestion, only: %i[ show edit update destroy ]
   
       def index
-        if params[:user_id]
-          user = User.find(params[:user_id])
-          @suggestions = current_user.suggestions.where(user: user)
-        else
           @suggestions = current_user.suggestions
-        end 
       end 
   
       def new
