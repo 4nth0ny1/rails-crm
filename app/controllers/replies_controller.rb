@@ -18,7 +18,7 @@ class RepliesController < ApplicationController
       def create
             @reply = current_user.replies.build(reply_params)
               if @reply.save
-                redirect_to @reply, notice: "Reply was successfully created." 
+                redirect_to @reply.product, notice: "Reply was successfully created." 
               else
                 render :new
               end

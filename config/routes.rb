@@ -22,10 +22,12 @@ Rails.application.routes.draw do
     resources :comments, only: [:new]
   end 
   
-  resources :comments, except: [:new] do
+  resources :comments, except: [:new] 
+
+  resources :comments do
     resources :replies, only: [:new]
   end 
-  
+
   resources :replies, expect: [:new]
   resources :suggestions, except: [:new]
   resources :tasks, except: [:new]
