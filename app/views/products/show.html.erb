@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 <div class="show-container">
   <div class="home-container">
+
     <h2><strong><%= @product.name %></strong></h2>
+    
+    <% if @product.image_link %>
+     <%= image_tag(@product.image_link, width:"200") %>
+    <% end %>
     
     <p><strong>Description: </strong><%= @product.description %></p>
 
