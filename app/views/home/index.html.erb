@@ -1,19 +1,82 @@
  <p id='notice'><%= notice %></p>
  <div class="show-container">
-<div class="home-container">
+  <div class="home-container">
+    <div class="text-home-container">
+      <h1>Rails CRM</h1><br>
+      <p class="line-1 anim-typewriter">training not required</p>
 
-  
-  <div class="text-home-container">
-    <h1>Rails CRM</h1><br>
-    <p class="line-1 anim-typewriter">training not required</p>
-
-    <% if current_user %>
-      Logged in as <%= current_user.email %>.
-      <%= link_to 'Log Out', logout_path %>
-    <% else %>
-      <button type="button" class="btn text-decoration-none text-white btn-primary"><%= link_to 'Sign Up', signup_path, class:"text-white text-decoration-none" %></button>
-      <button type="button" class="btn btn-info"><%= link_to 'Log In', login_path, class:"text-white text-decoration-none" %></button>
-    <% end %>
+      <% if current_user %>
+        Logged in as <%= current_user.email %>.
+        <%= link_to 'Log Out', logout_path %>
+      <% else %>
+        <button type="button" class="btn text-decoration-none text-white btn-primary"><%= link_to 'Sign Up', signup_path, class:"text-white text-decoration-none" %></button>
+        <button type="button" class="btn btn-info"><%= link_to 'Log In', login_path, class:"text-white text-decoration-none" %></button>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<div class="container section-2">
+  <h2 class="section-header-title">Section Header</h2>
+    <div class="row">
+        <div class="col-4 ">
+          <img href="#" alt="img-01">
+          <div class="headlines-right">
+            <h4>Headline</h4>
+            <h5>Sub-heading</h5>
+          </div>
+        </div>
+        <div class="col-4 ">
+          <img href="#" alt="img-01">
+          <div class="headlines-right">
+            <h4>Headline</h4>
+            <h5>Sub-heading</h5>
+          </div>
+        </div>
+        <div class="col-4 ">
+          <img href="#" alt="img-01">
+          <div class="headlines-right">
+            <h4>Headline</h4>
+            <h5>Sub-heading</h5>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="container section-2">
+  <h2 class="section-header-title">Section Header</h2>
+    <div class="row">
+        <div class="col-3 card">
+          <img href="#" alt="img-01">
+          <div class="headlines-right">
+            <h4>Headline</h4>
+            <h5>Sub-heading</h5>
+            <button class="btn button-home-page btn-outline-primary text-primary">Learn More</button>
+          </div>
+        </div>
+        <div class="col-3 card">
+          <img href="#" alt="img-01">
+          <div class="headlines-right">
+            <h4>Headline</h4>
+            <h5>Sub-heading</h5>
+            <button class="btn button-home-page btn-outline-primary text-primary">Learn More</button>
+          </div>
+        </div>
+        <div class="col-3 card">
+          <img href="#" alt="img-01">
+          <div class="headlines-right">
+            <h4>Headline</h4>
+            <h5>Sub-heading</h5>
+            <button class="btn button-home-page btn-outline-primary text-primary">Learn More</button>
+          </div>
+        </div>
+        <div class="col-3 card">
+          <img href="#" alt="img-01">
+          <div class="headlines-right">
+            <h4>Headline</h4>
+            <h5>Sub-heading</h5>
+            <button class="btn button-home-page btn-outline-primary text-primary">Learn More</button>
+          </div>
+        </div>
+    </div>
 </div>

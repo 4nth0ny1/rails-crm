@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :opportunities, except: [:new]
   resources :connections, except: [:new]
   resources :dashboards
+  resources :users
 
   resources :products do 
     resources :comments, only: [:new]

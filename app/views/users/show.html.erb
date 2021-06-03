@@ -3,6 +3,12 @@
   <div class="home-container">
     <h3>Employee Profile</h3>
 
+    <% if @user.profile_image %>
+     
+        <%= image_tag(@user.profile_image, width:"200") %>
+     
+    <% end %>
+
     <p>
       <%= @user.first_name %> <%= @user.last_name %>, <%= @user.role %>
     </p>
@@ -11,7 +17,7 @@
     
     <% if current_user == @user %>
       <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-warning" %> 
-      <%= link_to 'Destroy', users_path, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Destroy', user_path(@user), class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
 
     <% end %> 
       <%= link_to 'Back', users_path, class:"btn btn-info"  %>

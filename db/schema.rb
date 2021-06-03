@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_224728) do
+ActiveRecord::Schema.define(version: 2021_06_02_230645) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "company_name", null: false
@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 2021_06_02_224728) do
     t.string "role"
     t.string "google_refresh_token"
     t.string "google_token"
+    t.string "profile_image"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

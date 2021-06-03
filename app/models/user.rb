@@ -22,12 +22,16 @@ class User < ApplicationRecord
 
 
     def self.from_omniauth(auth)
-   
+
         # Creates a new user only if it doesn't exist
         #auth.info.email returns the email address as a string
         #we are taking the email that google sent my app and then fetching the user assoicated to that email. if it is found then we log in and if not then code creates the user for us. 
         where(email: auth.info.email).first_or_initialize do |user|
+
+          user.profile_image = auth.info.image
           user.email = auth.info.email
+          user.first_name = auth.info.first_name
+          user.last_name = auth.info.last_name
           #creates a new email in the db if we didn't find one
           user.password = SecureRandom.hex
           #creates a random password

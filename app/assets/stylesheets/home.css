@@ -1,0 +1,33 @@
+.col-4, .col-3 {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.card {
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 50px;
+    
+    text-align: center;
+}
+
+.headline-right {
+    flex-direction: row;
+}
+
+.section-header-title {
+    text-align: center;
+}
+
+.section-2 {
+    padding: 25px;
+}
+
+img {
+    padding: 25px;
+}
+
+.button-home-page {
+    margin-top: 10px;
+}
