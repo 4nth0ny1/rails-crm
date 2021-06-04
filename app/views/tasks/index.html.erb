@@ -22,7 +22,7 @@
     <% @tasks.each do |task| %>
       <% if current_user.id == task.user_id %>
       <tr>
-        <td><%= task.date %></td>
+        <td><%= task.created_at.strftime("%m/%d/%Y")%></td>
         <td><%= link_to task.notes, task %></td>
         <td><%= link_to task.contact.name, task.contact %></td>
         <td><%= link_to task.account.company_name, task.account %></td>

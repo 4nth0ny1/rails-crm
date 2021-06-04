@@ -3,7 +3,7 @@
 <div class="show-container">
   <div class="home-container">
         <h2>Task</h2>
-        <p><%= @task.date %></p>
+        <p><%= @task.date.strftime("%I:%M%p on %m/%d/%Y") %></p>
         
         <p><strong>Notes: </strong><%= @task.notes %></p>
 

@@ -11,7 +11,7 @@
         <tbody>
             <tr>
                 <% tasks.each do |task| %>
-                    <td><%= task.date %></td>
+                    <td><%= task.date.strftime("%m/%d/%Y: %I:%M%p")  %></td>
                     <% if task.contact %>
                         <td><%= link_to task.contact.name, contact_path(task.contact) %></td>
                     <% end %>

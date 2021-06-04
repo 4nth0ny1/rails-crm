@@ -4,5 +4,6 @@ class Task < ApplicationRecord
     has_one :account, through: :contact
 
     validates :date, :notes, presence: true
-   
+
+
 end 

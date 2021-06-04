@@ -20,6 +20,8 @@ class User < ApplicationRecord
   
     scope :by_first_name, -> { order('lower(first_name)') }
 
+   
+
 
     def self.from_omniauth(auth)
 

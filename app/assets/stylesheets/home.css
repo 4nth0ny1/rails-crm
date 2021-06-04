@@ -7,8 +7,7 @@
 .card {
     flex-direction: column;
     border-radius: 10px;
-    padding: 50px;
-    
+    padding: 50px;  
     text-align: center;
 }
 

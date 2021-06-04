@@ -42,7 +42,7 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Products
+            <%= link_to "Products", products_path, class:"footer-product-link" %>
           </h6>
           <%= active_link_to "iPhone XX", product_path(Product.first), class:"nav-link text-white" %>
           <%= active_link_to "Asus Computer", product_path(Product.second), class:"nav-link text-white" %>
